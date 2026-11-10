@@ -4,99 +4,274 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="HC Diagnostic E.I.R.L. — laboratorio clínico, análisis confiables y toma de muestras a domicilio.">
-  <meta name="theme-color" content="#082b52">
+  <meta name="theme-color" content="#07345d">
   <title>HC Diagnostic E.I.R.L. | Laboratorio Clínico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--navy:#082b52;--blue:#1265a8;--cyan:#27b7c7;--ink:#17324d;--muted:#64788c;--paper:#f4f8fb;--white:#fff;--line:#dce7ef;--shadow:0 18px 50px rgba(8,43,82,.10)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.04em;color:var(--navy)}
-    .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(145deg,var(--navy),var(--blue));display:grid;place-items:center;color:white;font-weight:900;font-size:17px;box-shadow:0 8px 20px #1265a833}
-    .brand small{display:block;font-size:10px;letter-spacing:.18em;color:var(--muted);font-weight:700}.links{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:650;color:#38536b}.links a:hover{color:var(--blue)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 21px;background:var(--blue);color:white;font-weight:750;cursor:pointer;box-shadow:0 8px 20px #1265a82b}.btn:hover{background:var(--navy);transform:translateY(-1px)}.btn.outline{background:white;color:var(--navy);border:1px solid #cbdce9;box-shadow:none}
-    .hero{background:radial-gradient(circle at 82% 20%,#d8f5f5 0,transparent 28%),linear-gradient(120deg,#f4f9fd,#fff 60%);padding:88px 0 76px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.eyebrow{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:11px}
-    h1{font-size:clamp(38px,5vw,61px);line-height:1.08;letter-spacing:-.045em;color:var(--navy);margin:15px 0 20px}.hero p{font-size:18px;color:#536b80;max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .hero-card{min-height:350px;border-radius:30px;background:linear-gradient(145deg,#082b52,#0c5790 65%,#1aa6b5);padding:34px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .hero-card:before,.hero-card:after{content:"";position:absolute;border:1px solid #ffffff30;border-radius:50%;width:280px;height:280px;right:-80px;top:-95px}.hero-card:after{width:190px;height:190px;right:-30px;top:-50px}
-    .pulse{width:82px;height:82px;border-radius:24px;background:#ffffff20;display:grid;place-items:center;font-size:34px;margin-bottom:40px}.hero-card h2{font-size:27px;line-height:1.2;max-width:300px;margin:0 0 12px}.hero-card p{color:#d8edf6;font-size:15px;max-width:320px}
-    .trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:38px;color:#587187;font-size:13px;font-weight:650}.trust span:before{content:"✓";color:#13a2a9;font-weight:900;margin-right:8px}
-    section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 38px}.section-head h2{font-size:clamp(28px,3vw,39px);line-height:1.15;letter-spacing:-.03em;color:var(--navy);margin:10px 0}.section-head p{color:var(--muted);margin:0}
-    .services{background:var(--paper)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 6px 20px #082b5208}.service .ico{width:46px;height:46px;border-radius:14px;background:#e9f5fb;color:var(--blue);display:grid;place-items:center;font-size:22px}.service h3{color:var(--navy);margin:16px 0 7px;font-size:18px}.service p{color:var(--muted);font-size:14px;margin:0}
-    .verify-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.verify-panel{border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);background:white}.verify-panel label{display:block;font-size:13px;font-weight:750;color:var(--navy);margin:14px 0 7px}.verify-panel input{width:100%;padding:14px 15px;border:1px solid #cbd9e4;border-radius:12px;font:inherit;outline:none}.verify-panel input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1265a81a}.result{margin-top:16px;padding:13px 15px;border-radius:12px;background:#fff8e9;color:#77551a;font-size:13px;display:none}.fine{font-size:12px;color:var(--muted);margin-top:14px}
-    .home{background:linear-gradient(120deg,var(--navy),#0d5c8d);color:white}.home-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.home h2{font-size:clamp(28px,3vw,40px);line-height:1.15;margin:8px 0}.home p{color:#d4e7f2;max-width:680px}
-    footer{background:#061f3a;color:#c4d5e2;padding:34px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}.foot strong{color:#fff}
-    @media(max-width:850px){.hero-grid,.verify-grid{grid-template-columns:1fr}.hero{padding:60px 0}.hero-card{min-height:280px}.cards{grid-template-columns:repeat(2,1fr)}.links{display:none}.home-grid{grid-template-columns:1fr}}
-    @media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.nav{height:68px}.cards{grid-template-columns:1fr}section{padding:58px 0}.hero p{font-size:16px}.verify-panel{padding:22px}.actions .btn{width:100%}.trust{gap:12px;display:grid}}
+    :root{
+      --navy:#07345d;--blue:#0876b9;--cyan:#20b8c7;--ink:#17344d;
+      --muted:#647b8e;--pale:#f2f8fc;--line:#dce8f0;--white:#fff;
+      --shadow:0 22px 60px rgba(7,52,93,.11);--radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 44px));margin-inline:auto}
+    .topline{height:4px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan))}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,232,240,.9)}
+    .nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .brand{display:flex;align-items:center;min-width:190px}
+    .brand img{display:block;width:166px;height:78px;object-fit:contain;object-position:left center}
+    .navlinks{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:700;color:#38566e}
+    .navlinks a{transition:color .2s}.navlinks a:hover{color:var(--blue)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:999px;background:var(--blue);color:white;font-size:13px;font-weight:800;border:1px solid var(--blue);box-shadow:0 9px 22px rgba(8,118,185,.18);transition:.2s}
+    .button:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-2px)}
+    .button.light{background:#fff;color:var(--navy);border-color:#cbdde9;box-shadow:none}
+    .button.light:hover{background:#eef7fc;border-color:#a9c9dc}
+    .menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;color:var(--navy);font-size:20px}
+    .hero{position:relative;overflow:hidden;padding:84px 0 76px;background:
+      radial-gradient(ellipse at 82% 12%,rgba(32,184,199,.16),transparent 31%),
+      radial-gradient(ellipse at 5% 90%,rgba(8,118,185,.08),transparent 32%),
+      linear-gradient(115deg,#f4f9fc 0%,#fff 55%,#f3fbfc 100%)}
+    .hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(8,118,185,.10);border-radius:50%;right:-190px;bottom:-250px;box-shadow:0 0 0 38px rgba(8,118,185,.025),0 0 0 78px rgba(8,118,185,.02);pointer-events:none}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:58px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:24px;height:2px;background:var(--cyan);border-radius:3px}
+    h1,h2,h3{font-family:Manrope,"DM Sans",sans-serif}
+    h1{font-size:clamp(39px,5vw,61px);line-height:1.08;letter-spacing:-.055em;color:var(--navy);margin:18px 0}
+    .hero-copy{font-size:17px;max-width:570px;color:#536d82;margin:0}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+    .proofs{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#536d82;font-size:12px;font-weight:700}
+    .proofs span:before{content:"✓";color:#12a5a9;margin-right:8px;font-weight:900}
+    .brand-stage{position:relative;min-height:390px;display:grid;place-items:center}
+    .stage-glow{position:absolute;width:340px;height:340px;border-radius:50%;background:linear-gradient(145deg,rgba(32,184,199,.18),rgba(8,118,185,.08));filter:blur(2px)}
+    .stage-ring{position:absolute;width:390px;height:390px;border:1px solid rgba(8,118,185,.16);border-radius:50%;box-shadow:0 0 0 24px rgba(8,118,185,.025),0 0 0 54px rgba(8,118,185,.018)}
+    .logo-card{position:relative;width:min(100%,410px);min-height:280px;padding:30px 28px;background:rgba(255,255,255,.91);border:1px solid rgba(255,255,255,.95);border-radius:30px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+    .logo-card img{width:100%;max-width:350px;height:auto;object-fit:contain}
+    .floating-note{position:absolute;right:-12px;bottom:24px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(7,52,93,.2);font-size:12px;font-weight:700}
+    .floating-note small{display:block;color:#bde7ed;font-weight:500;font-size:10px;margin-top:2px}
+    section{padding:82px 0}
+    .section-head{max-width:680px;margin:0 auto 42px;text-align:center}
+    .section-head .eyebrow:before{display:none}
+    .section-head h2{font-size:clamp(29px,3.3vw,41px);line-height:1.16;letter-spacing:-.04em;color:var(--navy);margin:12px 0}
+    .section-head p{margin:0;color:var(--muted);font-size:15px}
+    .services{background:var(--pale)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;transition:transform .22s,box-shadow .22s,border-color .22s}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c4dce9}
+    .service-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#e6f5fb,#e8fbfa);display:grid;place-items:center;color:var(--blue);font-size:21px;font-weight:800}
+    .service h3{font-size:18px;color:var(--navy);margin:17px 0 7px}
+    .service p{font-size:13px;color:var(--muted);margin:0;line-height:1.65}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    .about-visual{min-height:330px;border-radius:28px;background:linear-gradient(145deg,#07345d,#0876b9 68%,#20b8c7);position:relative;overflow:hidden;display:grid;place-items:center;padding:34px}
+    .about-visual:before,.about-visual:after{content:"";position:absolute;border:1px solid #ffffff35;border-radius:50%;width:310px;height:310px;right:-95px;top:-115px}
+    .about-visual:after{width:220px;height:220px;right:-48px;top:-68px}
+    .about-symbol{position:relative;z-index:1;width:108px;height:108px;border-radius:30px;background:#ffffff1d;border:1px solid #ffffff38;display:grid;place-items:center;color:white;font-size:50px}
+    .about-copy h2{font-size:clamp(29px,3vw,40px);line-height:1.16;letter-spacing:-.04em;color:var(--navy);margin:13px 0}
+    .about-copy p{color:var(--muted);font-size:15px}
+    .values{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:24px}
+    .value{padding:15px 16px;border:1px solid var(--line);border-radius:15px;font-size:13px;font-weight:750;color:var(--navy);background:#fff}
+    .value span{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:3px}
+    .verify{background:linear-gradient(180deg,#f7fbfd,#fff)}
+    .verify-grid{display:grid;grid-template-columns:1fr .85fr;gap:55px;align-items:center}
+    .verify-copy h2{font-size:clamp(30px,3.4vw,43px);line-height:1.15;letter-spacing:-.04em;color:var(--navy);margin:13px 0}
+    .verify-copy p{color:var(--muted);font-size:15px;max-width:520px}
+    .verify-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+    .verify-card h3{margin:0;color:var(--navy);font-size:20px}
+    .verify-card label{display:block;font-size:12px;font-weight:800;color:var(--navy);margin:18px 0 7px}
+    .verify-card input{width:100%;padding:14px 15px;border:1px solid #cbdce7;border-radius:12px;font:inherit;font-size:14px;outline:none}
+    .verify-card input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(8,118,185,.10)}
+    .verify-card button{width:100%;margin-top:14px}
+    .notice{font-size:11px;color:#7b8d9c;margin:14px 0 0}
+    .result{display:none;margin-top:14px;padding:13px 14px;border-radius:12px;background:#fff5e4;color:#77551b;font-size:12px}
+    .home{background:linear-gradient(110deg,#07345d,#075c91 65%,#0a829b);color:#fff}
+    .home-grid{display:flex;align-items:center;justify-content:space-between;gap:34px}
+    .home h2{font-size:clamp(29px,3.2vw,42px);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
+    .home p{max-width:650px;color:#d7eaf3;margin:0}
+    .home .eyebrow{color:#8be4e5}
+    .home .button{background:#fff;border-color:#fff;color:var(--navy);white-space:nowrap;box-shadow:none}
+    .contact{text-align:center}
+    .contact h2{font-size:clamp(29px,3vw,39px);color:var(--navy);margin:12px 0}
+    .contact p{color:var(--muted);margin:0 0 24px}
+    .contact-details{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .contact-chip{border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:#48647a;font-size:13px;font-weight:700}
+    footer{background:#052846;color:#c7d8e4;padding:30px 0}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px}
+    .footer-brand{display:flex;align-items:center;gap:14px}
+    .footer-brand img{width:85px;height:58px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
+    .footer-brand strong{color:#fff;display:block;font-size:13px}
+    .footer-brand span{font-size:11px;color:#c7d8e4}
+    @media(max-width:900px){
+      .navlinks{gap:16px}.hero-grid{gap:28px}.brand-stage{min-height:330px}.stage-ring{width:320px;height:320px}.stage-glow{width:280px;height:280px}
+      .about-grid{gap:34px}.verify-grid{gap:32px}
+    }
+    @media(max-width:720px){
+      .nav{height:76px}.brand img{width:145px;height:68px}.navlinks{display:none;position:absolute;left:0;right:0;top:76px;background:#fff;padding:18px 24px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}
+      .navlinks.open{display:flex}.nav>.button{margin-left:auto;padding:11px 15px;font-size:12px}.menu-toggle{display:block}
+      .hero{padding:58px 0 50px}.hero-grid,.about-grid,.verify-grid{grid-template-columns:1fr}
+      .hero-grid{gap:18px}.brand-stage{min-height:300px}.logo-card{max-width:370px;min-height:235px}.floating-note{right:0;bottom:2px}
+      section{padding:62px 0}.cards{grid-template-columns:repeat(2,1fr)}.about-visual{min-height:230px}
+      .home-grid{align-items:flex-start;flex-direction:column}.home .button{white-space:normal}
+    }
+    @media(max-width:500px){
+      .container{width:calc(100% - 30px)}.nav>.button{display:none}.brand img{width:152px}
+      h1{font-size:39px}.hero-copy{font-size:15px}.proofs{display:grid;gap:9px}
+      .cards{grid-template-columns:1fr}.service{padding:23px}.values{grid-template-columns:1fr}
+      .verify-card{padding:23px}.logo-card{padding:22px;min-height:205px}.brand-stage{min-height:265px}
+      .footer-row{align-items:flex-start;flex-direction:column}
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#inicio" aria-label="HC Diagnostic inicio"><span class="mark">HC</span><span>HC DIAGNOSTIC<small>LABORATORIO CLÍNICO</small></span></a>
-    <nav class="links" aria-label="Navegación principal"><a href="#servicios">Servicios</a><a href="#verificacion">Resultados</a><a href="#domicilio">Domicilio</a><a href="#contacto">Contacto</a></nav>
-    <a class="btn" href="https://wa.me/51975250738" target="_blank" rel="noopener">Contáctanos</a>
-  </div>
-</header>
-<main>
-  <section class="hero" id="inicio">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Precisión · confianza · compromiso</div>
-        <h1>Experiencia y garantía para su salud es nuestro compromiso.</h1>
-        <p>En HC Diagnostic E.I.R.L. trabajamos para brindarte información confiable mediante servicios de laboratorio clínico y una atención cercana.</p>
-        <div class="actions"><a class="btn" href="https://wa.me/51975250738" target="_blank" rel="noopener">Solicitar información</a><a class="btn outline" href="#verificacion">Verificar resultado</a></div>
-        <div class="trust"><span>Atención personalizada</span><span>Calidad en cada proceso</span><span>Toma de muestra a domicilio</span></div>
+  <div class="topline"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="HC Diagnostic, inicio">
+        <img src="assets/logo-hc.png" alt="Logotipo original de HC Diagnostic">
+      </a>
+      <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#verificacion">Resultados</a><a href="#domicilio">Domicilio</a><a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button" href="https://wa.me/51975250738" target="_blank" rel="noopener">Contáctanos <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Precisión · confianza · compromiso</div>
+          <h1>Experiencia y garantía para su salud es nuestro compromiso.</h1>
+          <p class="hero-copy">En HC Diagnostic E.I.R.L. trabajamos para brindarte información confiable mediante servicios de laboratorio clínico y una atención cercana.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/51975250738" target="_blank" rel="noopener">Solicitar información <span aria-hidden="true">↗</span></a>
+            <a class="button light" href="#verificacion">Verificar resultado</a>
+          </div>
+          <div class="proofs"><span>Atención personalizada</span><span>Calidad en cada proceso</span><span>Toma de muestra a domicilio</span></div>
+        </div>
+        <div class="brand-stage" aria-label="Identidad visual de HC Diagnostic">
+          <div class="stage-glow"></div><div class="stage-ring"></div>
+          <div class="logo-card"><img src="assets/logo-hc.png" alt="HC Diagnostic, laboratorio clínico"></div>
+          <div class="floating-note">Laboratorio clínico<small>Compromiso con tu salud</small></div>
+        </div>
       </div>
-      <div class="hero-card"><div class="pulse">✚</div><h2>Tu salud merece resultados confiables.</h2><p>Comprometidos con una atención responsable, ordenada y orientada al paciente.</p></div>
-    </div>
-  </section>
-  <section class="services" id="servicios">
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">Nuestros servicios</div><h2>Áreas de laboratorio</h2><p>Consulta por disponibilidad, preparación y tiempos de entrega de cada examen.</p></div>
-      <div class="cards">
-        <article class="service"><div class="ico">⌁</div><h3>Hematología</h3><p>Hemograma, velocidad de sedimentación globular y evaluaciones hematológicas.</p></article>
-        <article class="service"><div class="ico">◈</div><h3>Bioquímica</h3><p>Perfiles bioquímicos, glucosa, función renal, función hepática y otros análisis.</p></article>
-        <article class="service"><div class="ico">◎</div><h3>Inmunología</h3><p>Pruebas hormonales, marcadores y determinaciones inmunológicas.</p></article>
-        <article class="service"><div class="ico">✣</div><h3>Microbiología</h3><p>Estudios microbiológicos y apoyo al diagnóstico mediante análisis de muestras.</p></article>
-        <article class="service"><div class="ico">▤</div><h3>Uroanálisis</h3><p>Examen completo de orina y evaluación del sedimento urinario.</p></article>
-        <article class="service"><div class="ico">⌂</div><h3>Toma de muestras</h3><p>Coordinación de toma de muestras a domicilio previa consulta de cobertura.</p></article>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-visual"><div class="about-symbol" aria-hidden="true">✚</div></div>
+        <div class="about-copy">
+          <div class="eyebrow">Conócenos</div>
+          <h2>Tu confianza es parte de nuestro compromiso.</h2>
+          <p>En HC Diagnostic E.I.R.L. ponemos nuestra atención en cada etapa del proceso de laboratorio, desde la orientación al paciente hasta el manejo responsable de las muestras y la entrega de información clara.</p>
+          <div class="values">
+            <div class="value">Atención cercana<span>Orientación clara y amable.</span></div>
+            <div class="value">Responsabilidad<span>Cuidado en cada etapa del proceso.</span></div>
+            <div class="value">Compromiso<span>Servicio enfocado en el paciente.</span></div>
+            <div class="value">Confianza<span>Información clara y ordenada.</span></div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Nuestros servicios</div>
+          <h2>Áreas de laboratorio</h2>
+          <p>Consulta por disponibilidad, preparación y tiempos de entrega de cada examen.</p>
+        </div>
+        <div class="cards">
+          <article class="service"><div class="service-icon">＋</div><h3>Hematología</h3><p>Hemograma, velocidad de sedimentación globular y evaluaciones hematológicas.</p></article>
+          <article class="service"><div class="service-icon">◈</div><h3>Bioquímica</h3><p>Perfiles bioquímicos, glucosa, función renal, función hepática y otros análisis.</p></article>
+          <article class="service"><div class="service-icon">◎</div><h3>Inmunología</h3><p>Pruebas hormonales, marcadores y determinaciones inmunológicas.</p></article>
+          <article class="service"><div class="service-icon">⌬</div><h3>Microbiología</h3><p>Estudios microbiológicos y apoyo al diagnóstico mediante análisis de muestras.</p></article>
+          <article class="service"><div class="service-icon">▤</div><h3>Uroanálisis</h3><p>Examen completo de orina y evaluación del sedimento urinario.</p></article>
+          <article class="service"><div class="service-icon">⌂</div><h3>Toma de muestras</h3><p>Coordinación de toma de muestras a domicilio previa consulta de cobertura.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="verify" id="verificacion">
+      <div class="container verify-grid">
+        <div class="verify-copy">
+          <div class="eyebrow">Consulta digital</div>
+          <h2>Verificación de resultados</h2>
+          <p>Estamos preparando un sistema de consulta para que puedas verificar tus informes mediante un código único. La validación real se habilitará cuando se conecte el sistema seguro de resultados.</p>
+        </div>
+        <form class="verify-card" id="verifyForm">
+          <h3>Consultar informe</h3>
+          <label for="code">Código de verificación</label>
+          <input id="code" name="code" autocomplete="off" placeholder="Ej. HC-2026-0001" maxlength="40" required>
+          <button class="button" type="submit">Consultar estado</button>
+          <div class="result" id="result" role="status" aria-live="polite"></div>
+          <p class="notice">Versión demostrativa: todavía no consulta informes reales. No ingreses nombres, documentos ni datos clínicos.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="home" id="domicilio">
+      <div class="container home-grid">
+        <div>
+          <div class="eyebrow">Atención coordinada</div>
+          <h2>Toma de muestra a domicilio</h2>
+          <p>Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.</p>
+        </div>
+        <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">Coordinar por WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="eyebrow">Estamos para ayudarte</div>
+        <h2>Comunícate con HC Diagnostic</h2>
+        <p>Consultas, información y coordinación de servicios.</p>
+        <a class="button" href="https://wa.me/51975250738" target="_blank" rel="noopener">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+        <div class="contact-details">
+          <span class="contact-chip">Teléfono: 975 250 738</span>
+          <span class="contact-chip">Correo: hcdiagnostic2@gmail.com</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="footer-brand">
+        <img src="assets/logo-hc.png" alt="">
+        <div><strong>HC DIAGNOSTIC E.I.R.L.</strong><span>Experiencia y garantía para su salud es nuestro compromiso.</span></div>
+      </div>
+      <div>© <span id="year"></span> HC Diagnostic. Todos los derechos reservados.</div>
     </div>
-  </section>
-  <section id="verificacion">
-    <div class="wrap verify-grid">
-      <div><div class="eyebrow">Consulta digital</div><h2 style="font-size:clamp(29px,3vw,40px);line-height:1.15;color:var(--navy);letter-spacing:-.03em">Verificación de resultados</h2><p style="color:var(--muted)">Ingresa el código de verificación que aparece en tu informe para consultar su estado.</p><p class="fine">Esta versión es una demostración visual. Todavía no consulta una base de datos ni valida informes reales.</p></div>
-      <form class="verify-panel" id="verifyForm">
-        <h3 style="margin:0;color:var(--navy)">Consultar informe</h3>
-        <label for="code">Código de verificación</label>
-        <input id="code" name="code" autocomplete="off" placeholder="Ej. HC-2026-0001" required maxlength="40">
-        <button class="btn" style="width:100%;margin-top:16px" type="submit">Consultar estado</button>
-        <div class="result" id="result" role="status" aria-live="polite"></div>
-        <p class="fine">No ingreses datos clínicos personales en esta demostración.</p>
-      </form>
-    </div>
-  </section>
-  <section class="home" id="domicilio">
-    <div class="wrap home-grid"><div><div class="eyebrow" style="color:#70d7df">Atención coordinada</div><h2>Toma de muestra a domicilio</h2><p>Coordina con nuestro equipo la disponibilidad del servicio, ubicación y preparación necesaria para tu análisis.</p></div><a class="btn" style="background:#fff;color:var(--navy)" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">Coordinar por WhatsApp</a></div>
-  </section>
-  <section id="contacto">
-    <div class="wrap" style="text-align:center"><div class="eyebrow">Estamos para ayudarte</div><h2 style="font-size:34px;color:var(--navy);margin:10px 0">Comunícate con HC Diagnostic</h2><p style="color:var(--muted)">Consultas y coordinación de servicios.</p><a class="btn" href="https://wa.me/51975250738" target="_blank" rel="noopener">WhatsApp: 975 250 738</a></div>
-  </section>
-</main>
-<footer><div class="wrap foot"><div><strong>HC DIAGNOSTIC E.I.R.L.</strong><br>Experiencia y garantía para su salud es nuestro compromiso.</div><div>© <span id="year"></span> HC Diagnostic. Todos los derechos reservados.</div></div></footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('verifyForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const code = document.getElementById('code').value.trim();
-    const box = document.getElementById('result');
-    box.style.display = 'block';
-    box.textContent = code
-      ? 'NO ENCONTRADO — La consulta es solo demostrativa. La validación real estará disponible cuando se conecte el sistema seguro de resultados.'
-      : 'Ingresa un código para continuar.';
-  });
-</script>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuToggle = document.getElementById("menuToggle");
+    const navlinks = document.getElementById("navlinks");
+    menuToggle.addEventListener("click", () => {
+      const open = navlinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    navlinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navlinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    }));
+    document.getElementById("verifyForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const code = document.getElementById("code").value.trim();
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = code
+        ? "CONSULTA DEMOSTRATIVA: el sistema seguro de verificación todavía no está conectado. Este código no ha sido validado."
+        : "Ingresa un código para continuar.";
+    });
+  </script>
 </body>
 </html>
