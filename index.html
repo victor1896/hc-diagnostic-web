@@ -113,11 +113,16 @@
     .notice{font-size:11px;color:#7b8d9c;margin:14px 0 0}
     .result{display:none;margin-top:14px;padding:13px 14px;border-radius:12px;background:#fff5e4;color:#77551b;font-size:12px}
     .home{background:linear-gradient(110deg,#07345d,#075c91 65%,#0a829b);color:#fff}
-    .home-grid{display:flex;align-items:center;justify-content:space-between;gap:34px}
+  .home-grid{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px 34px}
+.home-title{grid-column:1;grid-row:1}
+.home-description{grid-column:1;grid-row:2}
+.home .button{grid-column:2;grid-row:1 / span 2}
     .home h2{font-size:clamp(29px,3.2vw,42px);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
-    .home p{max-width:650px;color:#07345d;margin:0;font-weight:600}
+    .home .home-description{max-width:650px;color:#d7f3fa;margin:0;font-size:14px;font-weight:500}
     .home .eyebrow{color:#8be4e5}
     .home .button{background:#fff;border-color:#fff;color:var(--navy);white-space:nowrap;box-shadow:none}
+    .home-title{background:#fff;border-radius:80px;padding:24px 30px;flex:1}
+.home-description{max-width:650px;color:#d7f3fa;font-size:14px;font-weight:500;margin:0}
     .contact{text-align:center}
     .contact h2{font-size:clamp(29px,3vw,39px);color:var(--navy);margin:12px 0}
     .contact p{color:var(--muted);margin:0 0 24px}
@@ -139,7 +144,9 @@
       .hero{padding:58px 0 50px}.hero-grid,.about-grid,.verify-grid{grid-template-columns:1fr}
       .hero-grid{gap:18px}.brand-stage{min-height:300px}.logo-card{max-width:370px;min-height:235px}.floating-note{right:0;bottom:2px}
       section{padding:62px 0}.cards{grid-template-columns:repeat(2,1fr)}.about-visual{min-height:230px}
-      .home-grid{align-items:flex-start;flex-direction:column}.home .button{white-space:normal}
+     .home-grid{grid-template-columns:1fr;align-items:start}
+.home-title,.home-description,.home .button{grid-column:1;grid-row:auto}
+.home .button{white-space:normal;justify-self:start}
     }
     @media(max-width:500px){
       .container{width:calc(100% - 30px)}.nav>.button{display:none}.brand img{width:152px}
@@ -307,15 +314,23 @@
 
 
     <section class="home" id="domicilio">
-      <div class="container home-grid">
-        <div>
-          <div class="eyebrow">Atención coordinada</div>
-          <h2>Toma de muestra a domicilio</h2>
-          <p>Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.</p>
-        </div>
-        <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">Coordinar por WhatsApp <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
+     
+<div class="container home-grid">
+  <div class="home-title">
+    <div class="eyebrow">Atención coordinada</div>
+    <h2>Toma de muestra a domicilio</h2>
+  </div>
+
+  <p class="home-description">
+    Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.
+  </p>
+
+  <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">
+    Coordinar por WhatsApp ↗
+  </a>
+</div>
+</section>
+
 
    
 <section class="contact" id="contacto">
