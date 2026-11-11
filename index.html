@@ -113,10 +113,18 @@
     .notice{font-size:11px;color:#7b8d9c;margin:14px 0 0}
     .result{display:none;margin-top:14px;padding:13px 14px;border-radius:12px;background:#fff5e4;color:#77551b;font-size:12px}
     .home{background:linear-gradient(110deg,#07345d,#075c91 65%,#0a829b);color:#fff}
-  .home-grid{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px 34px}
-.home-title{grid-column:1;grid-row:1}
-.home-description{grid-column:1;grid-row:2}
-.home .button{grid-column:2;grid-row:1 / span 2}
+  .home-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:
+    "title button"
+    "description button";
+  align-items:center;
+  gap:14px 34px;
+}
+.home-title{grid-area:title}
+.home-description{grid-area:description}
+.home .button{grid-area:button;align-self:center}
     .home h2{font-size:clamp(29px,3.2vw,42px);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
     .home .home-description{max-width:650px;color:#d7f3fa;margin:0;font-size:14px;font-weight:500}
     .home .eyebrow{color:#8be4e5}
@@ -154,15 +162,7 @@
       .cards{grid-template-columns:1fr}.service{padding:23px}.values{grid-template-columns:1fr}
       .verify-card{padding:23px}.logo-card{padding:22px;min-height:205px}.brand-stage{min-height:265px}
       .footer-row{align-items:flex-start;flex-direction:column}
-    }
-  
-@media(max-width:500px){
-  .home-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1fr);
-    align-items:start;
-    gap:14px;
-  }
+
   .home-title{
     grid-column:1;
     grid-row:1;
