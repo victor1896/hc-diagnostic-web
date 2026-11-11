@@ -258,23 +258,39 @@
       </div>
     </section>
 
-    <section class="verify" id="verificacion">
-      <div class="container verify-grid">
-        <div class="verify-copy">
-          <div class="eyebrow">Consulta digital</div>
-          <h2>Verificación de resultados</h2>
-          <p>Estamos preparando un sistema de consulta para que puedas verificar tus informes mediante un código único. La validación real se habilitará cuando se conecte el sistema seguro de resultados.</p>
-        </div>
-        <form class="verify-card" id="verifyForm">
-          <h3>Consultar informe</h3>
-          <label for="code">Código de verificación</label>
-          <input id="code" name="code" autocomplete="off" placeholder="Ej. HC-2026-0001" maxlength="40" required>
-          <button class="button" type="submit">Consultar estado</button>
-          <div class="result" id="result" role="status" aria-live="polite"></div>
-          <p class="notice">Versión demostrativa: todavía no consulta informes reales. No ingreses nombres, documentos ni datos clínicos.</p>
-        </form>
-      </div>
-    </section>
+   
+<section class="verify" id="verificacion">
+  <div class="container verify-grid">
+    <div class="verify-copy">
+      <div class="eyebrow">Atención digital</div>
+      <h2>Solicita tus resultados</h2>
+      <p>Para solicitar tu informe de laboratorio, comunícate directamente con nuestro equipo. Verificaremos tus datos antes de compartir el resultado para proteger la confidencialidad de tu información.</p>
+    </div>
+
+    <div class="verify-card">
+      <h3>¿Necesitas tu informe PDF?</h3>
+      <p style="color:var(--muted);font-size:14px;margin:12px 0 18px">
+        Solicita tu resultado por uno de nuestros canales de atención.
+      </p>
+
+      <a class="button" style="width:100%;margin-top:4px"
+         href="https://wa.me/51975250738?text=Hola%2C%20deseo%20solicitar%20mi%20resultado%20de%20laboratorio."
+         target="_blank" rel="noopener">
+         Solicitar por WhatsApp ↗
+      </a>
+
+      <a class="button light" style="width:100%;margin-top:12px"
+         href="mailto:hcdiagnostic2@gmail.com?subject=Solicitud%20de%20resultado%20de%20laboratorio">
+         Solicitar por correo
+      </a>
+
+      <p class="notice">
+        Por tu seguridad, verificaremos tu identidad antes de compartir información clínica.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <section class="home" id="domicilio">
       <div class="container home-grid">
