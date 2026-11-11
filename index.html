@@ -222,6 +222,62 @@
   }
 }
 
+    /* Corrección definitiva de la sección de domicilio */
+#domicilio .home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) auto;
+  grid-template-areas: "panel button";
+  align-items: center;
+  gap: 24px;
+}
+
+#domicilio .home-panel {
+  grid-area: panel;
+  background: #fff;
+  border-radius: 80px;
+  padding: 32px 40px;
+  min-width: 0;
+}
+
+#domicilio .home-title {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+#domicilio .home-description {
+  width: 100%;
+  max-width: none;
+  margin: 12px 0 0;
+  color: #07345d;
+  line-height: 1.6;
+}
+
+#domicilio .home-grid > .button {
+  grid-area: button;
+  justify-self: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  #domicilio .home-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "panel"
+      "button";
+    gap: 18px;
+  }
+
+  #domicilio .home-panel {
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  #domicilio .home-grid > .button {
+    justify-self: start;
+  }
+}
   </style>
 </head>
 <body>
@@ -380,23 +436,30 @@
 </section>
 
 
-    <section class="home" id="domicilio">
-     
-<div class="container home-grid">
-  <div class="home-title">
-    <div class="eyebrow">Atención coordinada</div>
-    <h2>Toma de muestra a domicilio</h2>
+   
+
+
+<section class="home" id="domicilio">
+  <div class="container home-grid">
+    <div class="home-panel">
+      <div class="home-title">
+        <div class="eyebrow">Atención coordinada</div>
+        <h2>Toma de muestra a domicilio</h2>
+      </div>
+
+      <p class="home-description">
+        Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.
+      </p>
+    </div>
+
+    <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">
+      Coordinar por WhatsApp ↗
+    </a>
   </div>
-
-  <p class="home-description">
-    Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.
-  </p>
-
-  <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">
-    Coordinar por WhatsApp ↗
-  </a>
-</div>
 </section>
+
+
+
 
 
    
