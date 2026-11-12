@@ -764,6 +764,116 @@
     transform: none;
   }
 }
+    
+/* DISEÑO DEL FORMULARIO DE CITAS HC DIAGNOSTIC */
+.appointment {
+  padding: 85px 0;
+  background: linear-gradient(180deg, #f1f8fc, #ffffff);
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.appointment-copy h2 {
+  color: var(--navy);
+  font-size: clamp(29px, 3.4vw, 42px);
+  line-height: 1.15;
+  margin: 15px 0;
+}
+
+.appointment-copy p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.appointment-note {
+  margin-top: 22px;
+  padding: 15px;
+  border-left: 3px solid var(--cyan);
+  border-radius: 10px;
+  background: #eaf6fa;
+  color: #45677f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.appointment-card {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.appointment-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.appointment-fields label {
+  display: block;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.appointment-fields input,
+.appointment-fields select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  min-height: 47px;
+  padding: 11px 12px;
+  border: 1px solid #cbdce7;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--ink);
+  font: 500 13px "DM Sans", Arial, sans-serif;
+}
+
+.appointment-fields .field-wide {
+  grid-column: 1 / -1;
+}
+
+.appointment-submit {
+  width: 100%;
+  margin-top: 21px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.appointment-privacy {
+  margin: 12px 0 0;
+  color: #7b8d9c;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media(max-width:800px) {
+  .appointment-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media(max-width:520px) {
+  .appointment-card {
+    padding: 22px;
+  }
+  .appointment-fields {
+    grid-template-columns: 1fr;
+  }
+  .appointment-fields .field-wide {
+    grid-column: auto;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -971,7 +1081,57 @@
 
 
    
-<section class="contact" id="contacto">
+
+<section class="appointment" id="citas">
+  <div class="container appointment-grid">
+    <div class="appointment-copy">
+      <div class="eyebrow">Agenda tu atención</div>
+      <h2>Solicita una cita o toma de muestra</h2>
+      <p>Completa estos datos y se abrirá WhatsApp con tu solicitud lista para enviar. Nuestro equipo confirmará la disponibilidad, preparación y horario.</p>
+      <div class="appointment-note">La solicitud no confirma una cita automáticamente. La atención queda coordinada cuando nuestro equipo te responda.</div>
+    </div>
+
+    <form class="appointment-card" id="appointmentForm">
+      <div class="appointment-fields">
+        <label>Nombre completo
+          <input name="nombre" type="text" placeholder="Escribe tu nombre" required>
+        </label>
+        <label>Celular de contacto
+          <input name="celular" type="tel" placeholder="Tu número de celular" required>
+        </label>
+        <label class="field-wide">Análisis que necesitas
+          <select name="analisis" required>
+            <option value="">Selecciona una opción</option>
+            <option>Hematología</option>
+            <option>Bioquímica</option>
+            <option>Inmunología / pruebas hormonales</option>
+            <option>Microbiología / cultivos</option>
+            <option>Examen completo de orina</option>
+            <option>Exámenes especiales</option>
+            <option>Otro / necesito orientación</option>
+          </select>
+        </label>
+        <label>Tipo de atención
+          <select name="atencion" required>
+            <option value="">Selecciona</option>
+            <option>En el laboratorio</option>
+            <option>Toma de muestra a domicilio</option>
+          </select>
+        </label>
+        <label>Fecha de preferencia
+          <input name="fecha" type="date">
+        </label>
+        <label class="field-wide">Distrito o zona (si es a domicilio)
+          <input name="zona" type="text" placeholder="Indica tu distrito o zona">
+        </label>
+      </div>
+      <button class="button appointment-submit" type="submit">Enviar solicitud por WhatsApp ↗</button>
+      <p class="appointment-privacy">No incluyas diagnósticos ni información clínica privada en este formulario.</p>
+    </form>
+  </div>
+</section>
+
+    <section class="contact" id="contacto">
   <div class="container">
     <div class="eyebrow">Estamos para ayudarte</div>
     <h2>Comunícate con HC Diagnostic</h2>
@@ -1052,6 +1212,29 @@ if (
     element.classList.add("is-visible");
   });
 }
+    
+const appointmentForm = document.getElementById("appointmentForm");
+
+appointmentForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const data = new FormData(appointmentForm);
+
+  const mensaje = [
+    "Hola, HC Diagnostic. Deseo solicitar una cita o toma de muestra.",
+    "Nombre: " + data.get("nombre"),
+    "Celular: " + data.get("celular"),
+    "Análisis: " + data.get("analisis"),
+    "Atención: " + data.get("atencion"),
+    "Fecha preferida: " + (data.get("fecha") || "Por coordinar"),
+    "Distrito o zona: " + (data.get("zona") || "No indicado")
+  ].join("\n");
+
+  const enlace = "https://wa.me/51975250738?text=" + encodeURIComponent(mensaje);
+
+  window.open(enlace, "_blank");
+});
+
  </script>
 </body>
 </html>
