@@ -278,7 +278,64 @@
     justify-self: start;
   }
 }
-  </style>
+ 
+/* Animaciones suaves HC Diagnostic */
+@keyframes hc-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-grid > div:first-child {
+  animation: hc-enter .75s ease-out both;
+}
+
+.hero-grid > div:last-child {
+  animation: hc-enter .9s ease-out .12s both;
+}
+
+/* Aparición progresiva al desplazarse */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Entrada escalonada de servicios */
+.cards .service:nth-child(2) { transition-delay: .08s; }
+.cards .service:nth-child(3) { transition-delay: .16s; }
+.cards .service:nth-child(4) { transition-delay: .24s; }
+.cards .service:nth-child(5) { transition-delay: .32s; }
+.cards .service:nth-child(6) { transition-delay: .40s; }
+.cards .service:nth-child(7) { transition-delay: .48s; }
+
+/* Accesibilidad: respetar movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+}
+ </style>
 </head>
 <body>
   <div class="topline"></div>
@@ -514,6 +571,37 @@
       menuToggle.textContent = "☰";
     }));
    
-  </script>
+ 
+// Activar animaciones al desplazarse por la página
+const revealTargets = document.querySelectorAll(
+  ".section-head, .about-copy, .values, .cards .service, .verify-copy, .verify-card, #domicilio .home-panel, #domicilio .home-grid > .button, .contact .container > *"
+);
+
+revealTargets.forEach(element => {
+  element.classList.add("reveal-item");
+});
+
+if (
+  "IntersectionObserver" in window &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealTargets.forEach(element => {
+    revealObserver.observe(element);
+  });
+} else {
+  revealTargets.forEach(element => {
+    element.classList.add("is-visible");
+  });
+}
+ </script>
 </body>
 </html>
