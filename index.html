@@ -1315,6 +1315,17 @@ appointmentForm.addEventListener("submit", function(event) {
   const enlace = "https://wa.me/51975250738?text=" + encodeURIComponent(mensaje);
 
   window.open(enlace, "_blank");
+
+let aviso = document.getElementById("confirmacionCita");
+
+if (!aviso) {
+  aviso = document.createElement("p");
+  aviso.id = "confirmacionCita";
+  aviso.style.cssText = "margin-top:15px;padding:14px;background:#e8f7f8;color:#075c91;border-radius:12px;text-align:center;font-size:13px;line-height:1.6;";
+  appointmentForm.appendChild(aviso);
+}
+
+aviso.textContent = "Tu solicitud está lista. En WhatsApp, pulsa Enviar para que HC Diagnostic pueda coordinar tu atención.";
 });
 
  </script>
