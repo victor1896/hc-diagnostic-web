@@ -112,6 +112,121 @@
     .verify-card button{width:100%;margin-top:14px}
     .notice{font-size:11px;color:#7b8d9c;margin:14px 0 0}
     .result{display:none;margin-top:14px;padding:13px 14px;border-radius:12px;background:#fff5e4;color:#77551b;font-size:12px}
+    
+/* PRESENTACIÓN PREMIUM - RESULTADOS HC DIAGNOSTIC */
+
+.verify {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(70px, 8vw, 104px) 0;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(32,184,199,.10), transparent 28%),
+    radial-gradient(circle at 92% 82%, rgba(8,118,185,.08), transparent 30%),
+    linear-gradient(180deg, #f4f9fc 0%, #ffffff 100%);
+}
+
+.verify-grid {
+  position: relative;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.verify-copy .eyebrow {
+  color: var(--blue);
+}
+
+.verify-copy h2 {
+  max-width: 520px;
+}
+
+.verify-copy p {
+  line-height: 1.8;
+}
+
+.verify-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d9e8f1;
+  border-radius: 28px;
+  padding: clamp(24px, 3vw, 34px);
+  box-shadow: 0 22px 60px rgba(7,52,93,.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.verify-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+
+.verify-card h3 {
+  font-size: 21px;
+  letter-spacing: -.02em;
+}
+
+.verify-card input {
+  min-height: 52px;
+  background: #fbfdff;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.verify-card input:hover {
+  border-color: #a9c8dc;
+  background: #fff;
+}
+
+.verify-card input:focus {
+  background: #fff;
+}
+
+.verify-card .button {
+  min-height: 50px;
+}
+
+.verify-card .notice {
+  line-height: 1.7;
+}
+
+.verify-card .result {
+  line-height: 1.65;
+  border: 1px solid #f1dfbd;
+}
+
+@media (hover:hover) {
+  .verify-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 68px rgba(7,52,93,.13);
+  }
+}
+
+@media (max-width:720px) {
+  .verify {
+    padding: 64px 0;
+  }
+
+  .verify-grid {
+    gap: 28px;
+  }
+
+  .verify-card {
+    border-radius: 23px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .verify-card,
+  .verify-card input {
+    transition: none;
+  }
+
+  .verify-card:hover {
+    transform: none;
+  }
+}
+
     .home{background:linear-gradient(110deg,#07345d,#075c91 65%,#0a829b);color:#fff}
 
 .home-grid{
