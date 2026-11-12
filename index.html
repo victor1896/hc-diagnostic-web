@@ -500,6 +500,116 @@
     min-height: 0;
   }
 }
+
+/* Presentación institucional HC Diagnostic */
+.about {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 95% 15%, rgba(32,184,199,.07), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
+}
+
+.about .section-head {
+  margin-bottom: 34px;
+}
+
+.about .about-copy {
+  padding: 30px 34px;
+  border: 1px solid #e0ebf2;
+  border-radius: 24px;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 12px 35px rgba(7,52,93,.055);
+}
+
+.about .about-copy h2 {
+  color: var(--navy);
+  font-size: clamp(27px, 3vw, 35px);
+  letter-spacing: -.04em;
+  margin: 0 0 14px;
+}
+
+.about .about-copy p {
+  max-width: 760px;
+  margin: 10px auto 0;
+  color: #60788b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about .values {
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.about .value {
+  position: relative;
+  overflow: hidden;
+  min-height: 175px;
+  padding: 27px 28px;
+  border: 1px solid #dce8f0;
+  border-radius: 21px;
+  background: linear-gradient(145deg, #fff, #fafdff);
+  box-shadow: 0 9px 28px rgba(7,52,93,.055);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.about .value::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0876b9, #20b8c7);
+}
+
+.about .value:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(7,52,93,.10);
+}
+
+.about .value strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--navy);
+  font-family: Manrope, sans-serif;
+  font-size: 20px;
+  letter-spacing: -.025em;
+}
+
+.about .value span {
+  color: #60788b;
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .about .about-copy {
+    padding: 24px 21px;
+    border-radius: 20px;
+  }
+
+  .about .values {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about .value {
+    min-height: 0;
+    padding: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about .value {
+    transition: none !important;
+  }
+
+  .about .value:hover {
+    transform: none;
+  }
+}
 </style>
 </head>
 <body>
