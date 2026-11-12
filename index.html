@@ -423,10 +423,11 @@
          Solicitar por WhatsApp ↗
       </a>
 
-      <a class="button light" style="width:100%;margin-top:12px"
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=hcdiagnostic2%40gmail.com&su=Solicitud%20de%20resultado%20de%20laboratorio"
-         Solicitar por correo
-      </a>
+     <a class="button light" style="width:100%;margin-top:12px"
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=hcdiagnostic2%40gmail.com&su=Solicitud%20de%20resultado%20de%20laboratorio"
+   target="_blank" rel="noopener">
+   Solicitar por correo ↗
+</a>
 
       <p class="notice">
         Por tu seguridad, verificaremos tu identidad antes de compartir información clínica.
@@ -512,15 +513,7 @@
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.textContent = "☰";
     }));
-    document.getElementById("verifyForm").addEventListener("submit", event => {
-      event.preventDefault();
-      const code = document.getElementById("code").value.trim();
-      const result = document.getElementById("result");
-      result.style.display = "block";
-      result.textContent = code
-        ? "CONSULTA DEMOSTRATIVA: el sistema seguro de verificación todavía no está conectado. Este código no ha sido validado."
-        : "Ingresa un código para continuar.";
-    });
+   
   </script>
 </body>
 </html>
