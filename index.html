@@ -435,6 +435,71 @@
     transform: none;
   }
 }
+
+/* Uniformidad y detalles por área de laboratorio */
+.cards {
+  grid-auto-rows: 1fr;
+}
+
+.cards .service {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.cards .service p {
+  flex-grow: 1;
+}
+
+.cards .service-icon {
+  flex-shrink: 0;
+}
+
+/* Identidad visual sutil para cada especialidad */
+.cards .service:nth-child(1) .service-icon {
+  background: linear-gradient(145deg, #e5f2ff, #e8f5ff);
+  color: #1769aa;
+}
+
+.cards .service:nth-child(2) .service-icon {
+  background: linear-gradient(145deg, #e4f8f2, #e8fbf8);
+  color: #138a78;
+}
+
+.cards .service:nth-child(3) .service-icon {
+  background: linear-gradient(145deg, #f0eaff, #f5f0ff);
+  color: #7954b8;
+}
+
+.cards .service:nth-child(4) .service-icon {
+  background: linear-gradient(145deg, #e5f5fb, #e8faff);
+  color: #0876b9;
+}
+
+.cards .service:nth-child(5) .service-icon {
+  background: linear-gradient(145deg, #fff3e5, #fff8ed);
+  color: #b87528;
+}
+
+.cards .service:nth-child(6) .service-icon {
+  background: linear-gradient(145deg, #e5f7f5, #edfbf9);
+  color: #168d91;
+}
+
+.cards .service:nth-child(7) .service-icon {
+  background: linear-gradient(145deg, #f0f3ff, #f5f6ff);
+  color: #586bb5;
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-auto-rows: auto;
+  }
+
+  .cards .service {
+    min-height: 0;
+  }
+}
 </style>
 </head>
 <body>
