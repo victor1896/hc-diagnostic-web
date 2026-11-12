@@ -610,7 +610,69 @@
     transform: none;
   }
 }
-</style>
+/* Valores institucionales HC Diagnostic */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 26px auto 0;
+}
+
+.principle {
+  padding: 23px 20px;
+  border: 1px solid #dce8f0;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fff, #f8fcff);
+  box-shadow: 0 8px 24px rgba(7,52,93,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.principle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7,52,93,.10);
+}
+
+.principle-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 13px;
+  border-radius: 14px;
+  background: #e6f5fb;
+  color: #0876b9;
+  font-size: 23px;
+}
+
+.principle h3 {
+  color: var(--navy);
+  font-size: 17px;
+  margin: 0 0 7px;
+}
+
+.principle p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principle {
+    transition: none;
+  }
+  .principle:hover {
+    transform: none;
+  }
+}</style>
 </head>
 <body>
   <div class="topline"></div>
@@ -672,7 +734,28 @@
       <div class="value">
         <strong>Visión</strong>
         <span>Ser un laboratorio clínico reconocido por la confianza, la calidad de atención y el compromiso con la mejora continua, contribuyendo a la prevención y cuidado de la salud de nuestra comunidad.</span>
-      </div>
+      </div> 
+    </div>
+  <div class="principles">
+  <article class="principle">
+    <div class="principle-icon">✧</div>
+    <h3>Precisión</h3>
+    <p>Rigor y responsabilidad en cada proceso analítico.</p>
+  </article>
+
+  <article class="principle">
+    <div class="principle-icon">♡</div>
+    <h3>Confianza</h3>
+    <p>Atención humana y comunicación transparente.</p>
+  </article>
+
+  <article class="principle">
+    <div class="principle-icon">✚</div>
+    <h3>Compromiso</h3>
+    <p>Dedicación y responsabilidad en el cuidado de la salud.</p>
+  </article>
+</div>
+
     </div>
 
   </div>
