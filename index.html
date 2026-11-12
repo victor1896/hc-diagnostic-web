@@ -873,7 +873,89 @@
     grid-column: auto;
   }
 }
+/* MEJORA VISUAL DEL FORMULARIO DE CITAS */
+.appointment {
+  position: relative;
+  padding: 90px 0;
+  background:
+    radial-gradient(ellipse at 10% 15%, rgba(32,184,199,.10), transparent 34%),
+    linear-gradient(180deg,#f1f8fc,#fff);
+}
 
+.appointment-grid {
+  grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+  gap: 50px;
+}
+
+.appointment-copy h2 {
+  font-family: Manrope,sans-serif;
+  letter-spacing: -.04em;
+}
+
+.appointment-card {
+  border-radius: 25px;
+  border: 1px solid #dce8f0;
+  box-shadow: 0 22px 55px rgba(7,52,93,.11);
+  position: relative;
+  overflow: hidden;
+}
+
+.appointment-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg,#0876b9,#20b8c7);
+}
+
+.appointment-fields input,
+.appointment-fields select {
+  border-radius: 12px;
+  min-height: 49px;
+  background: #fbfdff;
+  transition: .2s ease;
+}
+
+.appointment-fields input:focus,
+.appointment-fields select:focus {
+  outline: none;
+  border-color: #0876b9;
+  box-shadow: 0 0 0 4px rgba(8,118,185,.10);
+}
+
+.appointment-submit {
+  min-height: 52px;
+  font-size: 14px;
+}
+
+@media(max-width:800px) {
+  .appointment-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media(max-width:520px) {
+  .appointment {
+    padding: 60px 0;
+  }
+  .appointment-card {
+    padding: 27px 20px 22px;
+  }
+  .appointment-fields {
+    grid-template-columns: 1fr;
+  }
+  .appointment-fields .field-wide {
+    grid-column: auto;
+  }
+  .appointment-fields input,
+  .appointment-fields select {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 <body>
