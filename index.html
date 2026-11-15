@@ -47,36 +47,30 @@
     .proofs{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#536d82;font-size:12px;font-weight:700}
     .proofs span:before{content:"✓";color:#12a5a9;margin-right:8px;font-weight:900}
     .brand-stage{position:relative;min-height:390px;display:grid;place-items:center}
-    .stage-glow{position:absolute;width:390px;height:390px;border-radius:50%;background:linear-gradient(145deg,rgba(32,184,199,.18),rgba(8,118,185,.08));filter:blur(2px)}
-    .stage-ring{position:absolute;width:460px;height:460px;;border:1px solid rgba(8,118,185,.16);border-radius:50%;box-shadow:0 0 0 24px rgba(8,118,185,.025),0 0 0 54px rgba(8,118,185,.018)}   
-.logo-card {
-  position: relative;
-  width: 340px;
-  height: 340px;
-  min-height: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 50%;
-  box-shadow: none;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .stage-glow{position:absolute;width:340px;height:340px;border-radius:50%;background:linear-gradient(145deg,rgba(32,184,199,.18),rgba(8,118,185,.08));filter:blur(2px)}
+    .stage-ring{position:absolute;width:390px;height:390px;border:1px solid rgba(8,118,185,.16);border-radius:50%;box-shadow:0 0 0 24px rgba(8,118,185,.025),0 0 0 54px rgba(8,118,185,.018)}
+    .logo-card{
+  position:relative;
+  width:340px;
+  height:340px;
+  min-height:0;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:none;
 }
-
-.logo-card img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  margin: 0;
+   .logo-card img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+  border-radius:50%;
 }
-.floating-note{position:absolute;right:-12px;bottom:24px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(7,52,93,.2);font-size:12px;font-weight:700}
+    .floating-note{position:absolute;right:-12px;bottom:24px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:16px;box-shadow:0 14px 30px rgba(7,52,93,.2);font-size:12px;font-weight:700}
     .floating-note small{display:block;color:#bde7ed;font-weight:500;font-size:10px;margin-top:2px}
     section{padding:82px 0}
     .section-head{max-width:680px;margin:0 auto 42px;text-align:center}
@@ -112,170 +106,12 @@
     .verify-card button{width:100%;margin-top:14px}
     .notice{font-size:11px;color:#7b8d9c;margin:14px 0 0}
     .result{display:none;margin-top:14px;padding:13px 14px;border-radius:12px;background:#fff5e4;color:#77551b;font-size:12px}
-    
-/* PRESENTACIÓN PREMIUM - RESULTADOS HC DIAGNOSTIC */
-
-.verify {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(70px, 8vw, 104px) 0;
-  background:
-    radial-gradient(circle at 8% 18%, rgba(32,184,199,.10), transparent 28%),
-    radial-gradient(circle at 92% 82%, rgba(8,118,185,.08), transparent 30%),
-    linear-gradient(180deg, #f4f9fc 0%, #ffffff 100%);
-}
-
-.verify-grid {
-  position: relative;
-  gap: clamp(32px, 5vw, 64px);
-}
-
-.verify-copy .eyebrow {
-  color: var(--blue);
-}
-
-.verify-copy h2 {
-  max-width: 520px;
-}
-
-.verify-copy p {
-  line-height: 1.8;
-}
-
-.verify-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #d9e8f1;
-  border-radius: 28px;
-  padding: clamp(24px, 3vw, 34px);
-  box-shadow: 0 22px 60px rgba(7,52,93,.10);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.verify-card:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--cyan));
-}
-
-.verify-card h3 {
-  font-size: 21px;
-  letter-spacing: -.02em;
-}
-
-.verify-card input {
-  min-height: 52px;
-  background: #fbfdff;
-  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
-}
-
-.verify-card input:hover {
-  border-color: #a9c8dc;
-  background: #fff;
-}
-
-.verify-card input:focus {
-  background: #fff;
-}
-
-.verify-card .button {
-  min-height: 50px;
-}
-
-.verify-card .notice {
-  line-height: 1.7;
-}
-
-.verify-card .result {
-  line-height: 1.65;
-  border: 1px solid #f1dfbd;
-}
-
-@media (hover:hover) {
-  .verify-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 28px 68px rgba(7,52,93,.13);
-  }
-}
-
-@media (max-width:720px) {
-  .verify {
-    padding: 64px 0;
-  }
-
-  .verify-grid {
-    gap: 28px;
-  }
-
-  .verify-card {
-    border-radius: 23px;
-  }
-}
-
-@media (prefers-reduced-motion:reduce) {
-  .verify-card,
-  .verify-card input {
-    transition: none;
-  }
-
-  .verify-card:hover {
-    transform: none;
-  }
-}
-
     .home{background:linear-gradient(110deg,#07345d,#075c91 65%,#0a829b);color:#fff}
-
-.home-grid{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  grid-template-areas:
-    "title button"
-    "description button";
-  align-items:center;
-  gap:18px 34px;
-}
-.home-title{
-  grid-area:title;
-  background:#fff;
-  border-radius:28px;
-  padding:28px 34px;
-  min-width:0;
-}
-.home-title h2{
-  color:var(--navy);
-  font-size:clamp(29px,3.2vw,42px);
-  line-height:1.15;
-  letter-spacing:-.04em;
-  margin:12px 0;
-}
-.home-description{
-  grid-area:description;
-  max-width:650px;
-  color:#d7f3fa;
-  font-size:14px;
-  font-weight:500;
-  line-height:1.6;
-  margin:0;
-}
-.home .eyebrow{
-  color:#8be4e5;
-}
-.home .button{
-  grid-area:button;
-  align-self:center;
-  justify-self:end;
-  background:#fff;
-  border-color:#fff;
-  color:var(--navy);
-  white-space:nowrap;
-  box-shadow:none;
-}
-
-    
+    .home-grid{display:flex;align-items:center;justify-content:space-between;gap:34px}
+    .home h2{font-size:clamp(29px,3.2vw,42px);line-height:1.15;letter-spacing:-.04em;margin:12px 0}
+    .home p{max-width:650px;color:#d7eaf3;margin:0}
+    .home .eyebrow{color:#8be4e5}
+    .home .button{background:#fff;border-color:#fff;color:var(--navy);white-space:nowrap;box-shadow:none}
     .contact{text-align:center}
     .contact h2{font-size:clamp(29px,3vw,39px);color:var(--navy);margin:12px 0}
     .contact p{color:var(--muted);margin:0 0 24px}
@@ -297,9 +133,7 @@
       .hero{padding:58px 0 50px}.hero-grid,.about-grid,.verify-grid{grid-template-columns:1fr}
       .hero-grid{gap:18px}.brand-stage{min-height:300px}.logo-card{max-width:370px;min-height:235px}.floating-note{right:0;bottom:2px}
       section{padding:62px 0}.cards{grid-template-columns:repeat(2,1fr)}.about-visual{min-height:230px}
-     .home-grid{grid-template-columns:1fr;align-items:start}
-.home-title,.home-description,.home .button{grid-column:1;grid-row:auto}
-.home .button{white-space:normal;justify-self:start}
+      .home-grid{align-items:flex-start;flex-direction:column}.home .button{white-space:normal}
     }
     @media(max-width:500px){
       .container{width:calc(100% - 30px)}.nav>.button{display:none}.brand img{width:152px}
@@ -307,778 +141,15 @@
       .cards{grid-template-columns:1fr}.service{padding:23px}.values{grid-template-columns:1fr}
       .verify-card{padding:23px}.logo-card{padding:22px;min-height:205px}.brand-stage{min-height:265px}
       .footer-row{align-items:flex-start;flex-direction:column}
-
-  .home-title{
-    grid-column:1;
-    grid-row:1;
-    width:100%;
-    min-width:0;
-    padding:22px 24px;
-    border-radius:24px;
-  }
-  .home-title h2{
-    font-size:30px;
-  }
-  .home-description{
-    grid-column:1;
-    grid-row:2;
-    width:100%;
-    min-width:0;
-    max-width:none;
-    color:#d7f3fa;
-    font-size:14px;
-    line-height:1.6;
-  }
-  .home .button{
-    grid-column:1;
-    grid-row:3;
-    justify-self:start;
-    white-space:normal;
-  }
-}
-
-    /* Corrección definitiva de la sección de domicilio */
-#domicilio .home-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) auto;
-  grid-template-areas: "panel button";
-  align-items: center;
-  gap: 24px;
-}
-
-#domicilio .home-panel {
-  grid-area: panel;
-  background: #fff;
-  border-radius: 80px;
-  padding: 32px 40px;
-  min-width: 0;
-}
-
-#domicilio .home-title {
-  width: 100%;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-}
-
-#domicilio .home-description {
-  width: 100%;
-  max-width: none;
-  margin: 12px 0 0;
-  color: #07345d;
-  line-height: 1.6;
-}
-
-#domicilio .home-grid > .button {
-  grid-area: button;
-  justify-self: center;
-  white-space: nowrap;
-}
-
-@media (max-width: 720px) {
-  #domicilio .home-grid {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "panel"
-      "button";
-    gap: 18px;
-  }
-
-  #domicilio .home-panel {
-    padding: 24px;
-    border-radius: 28px;
-  }
-
-  #domicilio .home-grid > .button {
-    justify-self: start;
-  }
-}
- 
-/* Animaciones suaves HC Diagnostic */
-@keyframes hc-enter {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-grid > div:first-child {
-  animation: hc-enter .75s ease-out both;
-}
-
-.hero-grid > div:last-child {
-  animation: hc-enter .9s ease-out .12s both;
-}
-
-/* Aparición progresiva al desplazarse */
-.reveal-item {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .65s ease, transform .65s ease;
-}
-
-.reveal-item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Entrada escalonada de servicios */
-.cards .service:nth-child(2) { transition-delay: .08s; }
-.cards .service:nth-child(3) { transition-delay: .16s; }
-.cards .service:nth-child(4) { transition-delay: .24s; }
-.cards .service:nth-child(5) { transition-delay: .32s; }
-.cards .service:nth-child(6) { transition-delay: .40s; }
-.cards .service:nth-child(7) { transition-delay: .48s; }
-
-/* Accesibilidad: respetar movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-
-  .reveal-item {
-    opacity: 1;
-    transform: none;
-  }
-}
- 
-/* Acabado visual premium para las tarjetas de servicios */
-.services {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 8% 8%, rgba(32,184,199,.07), transparent 30%),
-    linear-gradient(180deg, #f2f8fc 0%, #f8fbfd 100%);
-}
-
-.services .section-head {
-  margin-bottom: 48px;
-}
-
-.services .section-head h2 {
-  letter-spacing: -.045em;
-}
-
-.cards .service {
-  position: relative;
-  overflow: hidden;
-  min-height: 205px;
-  padding: 29px;
-  border: 1px solid #dce8f0;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #fff 0%, #fbfdff 100%);
-  box-shadow: 0 8px 25px rgba(7,52,93,.045);
-  transition:
-    transform .28s ease,
-    box-shadow .28s ease,
-    border-color .28s ease;
-}
-
-.cards .service::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #0876b9, #20b8c7);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .3s ease;
-}
-
-.cards .service:hover {
-  transform: translateY(-6px);
-  border-color: #b8d9e8;
-  box-shadow: 0 18px 38px rgba(7,52,93,.11);
-}
-
-.cards .service:hover::before {
-  transform: scaleX(1);
-}
-
-.cards .service-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 17px;
-  background: linear-gradient(145deg, #e4f5fb, #e5faf8);
-  box-shadow: inset 0 0 0 1px rgba(8,118,185,.07);
-  transition: transform .28s ease;
-}
-
-.cards .service:hover .service-icon {
-  transform: translateY(-2px) scale(1.05);
-}
-
-.cards .service h3 {
-  margin-top: 19px;
-  letter-spacing: -.025em;
-}
-
-.cards .service p {
-  line-height: 1.75;
-}
-
-@media (max-width: 720px) {
-  .services .section-head {
-    margin-bottom: 32px;
-  }
-
-  .cards .service {
-    min-height: 0;
-    padding: 24px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cards .service,
-  .cards .service::before,
-  .cards .service-icon {
-    transition: none !important;
-  }
-
-  .cards .service:hover {
-    transform: none;
-  }
-}
-
-/* Uniformidad y detalles por área de laboratorio */
-.cards {
-  grid-auto-rows: 1fr;
-}
-
-.cards .service {
-  display: flex;
-  flex-direction: column;
-  min-height: 220px;
-}
-
-.cards .service p {
-  flex-grow: 1;
-}
-
-.cards .service-icon {
-  flex-shrink: 0;
-}
-
-/* Identidad visual sutil para cada especialidad */
-.cards .service:nth-child(1) .service-icon {
-  background: linear-gradient(145deg, #e5f2ff, #e8f5ff);
-  color: #1769aa;
-}
-
-.cards .service:nth-child(2) .service-icon {
-  background: linear-gradient(145deg, #e4f8f2, #e8fbf8);
-  color: #138a78;
-}
-
-.cards .service:nth-child(3) .service-icon {
-  background: linear-gradient(145deg, #f0eaff, #f5f0ff);
-  color: #7954b8;
-}
-
-.cards .service:nth-child(4) .service-icon {
-  background: linear-gradient(145deg, #e5f5fb, #e8faff);
-  color: #0876b9;
-}
-
-.cards .service:nth-child(5) .service-icon {
-  background: linear-gradient(145deg, #fff3e5, #fff8ed);
-  color: #b87528;
-}
-
-.cards .service:nth-child(6) .service-icon {
-  background: linear-gradient(145deg, #e5f7f5, #edfbf9);
-  color: #168d91;
-}
-
-.cards .service:nth-child(7) .service-icon {
-  background: linear-gradient(145deg, #f0f3ff, #f5f6ff);
-  color: #586bb5;
-}
-
-@media (max-width: 720px) {
-  .cards {
-    grid-auto-rows: auto;
-  }
-
-  .cards .service {
-    min-height: 0;
-  }
-}
-
-/* Presentación institucional HC Diagnostic */
-.about {
-  position: relative;
-  background:
-    radial-gradient(ellipse at 95% 15%, rgba(32,184,199,.07), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
-}
-
-.about .section-head {
-  margin-bottom: 34px;
-}
-
-.about .about-copy {
-  padding: 30px 34px;
-  border: 1px solid #e0ebf2;
-  border-radius: 24px;
-  background: rgba(255,255,255,.92);
-  box-shadow: 0 12px 35px rgba(7,52,93,.055);
-}
-
-.about .about-copy h2 {
-  color: var(--navy);
-  font-size: clamp(27px, 3vw, 35px);
-  letter-spacing: -.04em;
-  margin: 0 0 14px;
-}
-
-.about .about-copy p {
-  max-width: 760px;
-  margin: 10px auto 0;
-  color: #60788b;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.about .values {
-  gap: 18px;
-  margin-top: 22px;
-}
-
-.about .value {
-  position: relative;
-  overflow: hidden;
-  min-height: 175px;
-  padding: 27px 28px;
-  border: 1px solid #dce8f0;
-  border-radius: 21px;
-  background: linear-gradient(145deg, #fff, #fafdff);
-  box-shadow: 0 9px 28px rgba(7,52,93,.055);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.about .value::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #0876b9, #20b8c7);
-}
-
-.about .value:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 34px rgba(7,52,93,.10);
-}
-
-.about .value strong {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--navy);
-  font-family: Manrope, sans-serif;
-  font-size: 20px;
-  letter-spacing: -.025em;
-}
-
-.about .value span {
-  color: #60788b;
-  font-size: 13px;
-  line-height: 1.8;
-  font-weight: 500;
-}
-
-@media (max-width: 720px) {
-  .about .about-copy {
-    padding: 24px 21px;
-    border-radius: 20px;
-  }
-
-  .about .values {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .about .value {
-    min-height: 0;
-    padding: 23px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about .value {
-    transition: none !important;
-  }
-
-  .about .value:hover {
-    transform: none;
-  }
-}
-/* Valores institucionales HC Diagnostic */
-.principles {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 900px;
-  margin: 26px auto 0;
-}
-
-.principle {
-  padding: 23px 20px;
-  border: 1px solid #dce8f0;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #fff, #f8fcff);
-  box-shadow: 0 8px 24px rgba(7,52,93,.05);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.principle:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(7,52,93,.10);
-}
-
-.principle-icon {
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 13px;
-  border-radius: 14px;
-  background: #e6f5fb;
-  color: #0876b9;
-  font-size: 23px;
-}
-
-.principle h3 {
-  color: var(--navy);
-  font-size: 17px;
-  margin: 0 0 7px;
-}
-
-.principle p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-  margin: 0;
-}
-
-@media (max-width: 720px) {
-  .principles {
-    grid-template-columns: 1fr;
-    gap: 13px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .principle {
-    transition: none;
-  }
-  .principle:hover {
-    transform: none;
-  }
-
-}
-  /* CONTACTO - DISEÑO PREMIUM HC DIAGNOSTIC */
-.contact {
-  position: relative;
-  text-align: center;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(32,184,199,.08), transparent 30%),
-    linear-gradient(180deg, #f5f9fc, #ffffff);
-}
-
-.contact .container {
-  max-width: 1000px;
-}
-
-.contact h2 {
-  font-size: clamp(29px, 3.5vw, 40px);
-  letter-spacing: -.04em;
-  margin: 14px 0;
-}
-
-.contact > .container > p {
-  max-width: 650px;
-  margin: 0 auto 25px;
-  line-height: 1.8;
-}
-
-.contact > .container > .button {
-  padding: 16px 30px;
-  font-size: 14px;
-  box-shadow: 0 12px 28px rgba(8,118,185,.22);
-}
-
-.contact-details {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
-  max-width: 800px;
-  margin: 32px auto 0;
-}
-
-.contact-chip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 58px;
-  padding: 14px 18px;
-  border: 1px solid #dce8f0;
-  border-radius: 16px;
-  background: #fff;
-  color: #31546f;
-  font-size: 13px;
-  font-weight: 650;
-  box-shadow: 0 6px 18px rgba(7,52,93,.04);
-  transition: transform .2s ease, border-color .2s ease;
-}
-
-.contact-chip:hover {
-  transform: translateY(-3px);
-  border-color: #20b8c7;
-}
-
-.contact-details + p {
-  max-width: 760px;
-  margin: 24px auto 0 !important;
-  padding: 17px 22px;
-  border-radius: 15px;
-  background: #edf7fb;
-  color: #45677f !important;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-@media(max-width:600px) {
-  .contact-details {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .contact-chip {
-    min-height: 52px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  .contact-chip {
-    transition: none;
-  }
-  .contact-chip:hover {
-    transform: none;
-  }
-}
-    
-/* DISEÑO DEL FORMULARIO DE CITAS HC DIAGNOSTIC */
-.appointment {
-  padding: 85px 0;
-  background: linear-gradient(180deg, #f1f8fc, #ffffff);
-}
-
-.appointment-grid {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 45px;
-  align-items: center;
-}
-
-.appointment-copy h2 {
-  color: var(--navy);
-  font-size: clamp(29px, 3.4vw, 42px);
-  line-height: 1.15;
-  margin: 15px 0;
-}
-
-.appointment-copy p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.appointment-note {
-  margin-top: 22px;
-  padding: 15px;
-  border-left: 3px solid var(--cyan);
-  border-radius: 10px;
-  background: #eaf6fa;
-  color: #45677f;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.appointment-card {
-  padding: 30px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-}
-
-.appointment-fields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.appointment-fields label {
-  display: block;
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.appointment-fields input,
-.appointment-fields select {
-  display: block;
-  width: 100%;
-  margin-top: 7px;
-  min-height: 47px;
-  padding: 11px 12px;
-  border: 1px solid #cbdce7;
-  border-radius: 11px;
-  background: #fff;
-  color: var(--ink);
-  font: 500 13px "DM Sans", Arial, sans-serif;
-}
-
-.appointment-fields .field-wide {
-  grid-column: 1 / -1;
-}
-
-.appointment-submit {
-  width: 100%;
-  margin-top: 21px;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.appointment-privacy {
-  margin: 12px 0 0;
-  color: #7b8d9c;
-  font-size: 11px;
-  text-align: center;
-}
-
-@media(max-width:800px) {
-  .appointment-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-}
-
-@media(max-width:520px) {
-  .appointment-card {
-    padding: 22px;
-  }
-  .appointment-fields {
-    grid-template-columns: 1fr;
-  }
-  .appointment-fields .field-wide {
-    grid-column: auto;
-  }
-}
-/* MEJORA VISUAL DEL FORMULARIO DE CITAS */
-.appointment {
-  position: relative;
-  padding: 90px 0;
-  background:
-    radial-gradient(ellipse at 10% 15%, rgba(32,184,199,.10), transparent 34%),
-    linear-gradient(180deg,#f1f8fc,#fff);
-}
-
-.appointment-grid {
-  grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
-  gap: 50px;
-}
-
-.appointment-copy h2 {
-  font-family: Manrope,sans-serif;
-  letter-spacing: -.04em;
-}
-
-.appointment-card {
-  border-radius: 25px;
-  border: 1px solid #dce8f0;
-  box-shadow: 0 22px 55px rgba(7,52,93,.11);
-  position: relative;
-  overflow: hidden;
-}
-
-.appointment-card::before {
-  content: "";
-  display: block;
-  height: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(90deg,#0876b9,#20b8c7);
-}
-
-.appointment-fields input,
-.appointment-fields select {
-  border-radius: 12px;
-  min-height: 49px;
-  background: #fbfdff;
-  transition: .2s ease;
-}
-
-.appointment-fields input:focus,
-.appointment-fields select:focus {
-  outline: none;
-  border-color: #0876b9;
-  box-shadow: 0 0 0 4px rgba(8,118,185,.10);
-}
-
-.appointment-submit {
-  min-height: 52px;
-  font-size: 14px;
-}
-
-@media(max-width:800px) {
-  .appointment-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-@media(max-width:520px) {
-  .appointment {
-    padding: 60px 0;
-  }
-  .appointment-card {
-    padding: 27px 20px 22px;
-  }
-  .appointment-fields {
-    grid-template-columns: 1fr;
-  }
-  .appointment-fields .field-wide {
-    grid-column: auto;
-  }
-  .appointment-fields input,
-  .appointment-fields select {
-    font-size: 16px;
-  }
-}
-</style>
+    }
+  </style>
 </head>
 <body>
   <div class="topline"></div>
   <header>
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="HC Diagnostic, inicio">
-      <img src="assets/logo-hc.png" alt="Logotipo original de HC Diagnostic">
+        <img src="assets/logo-hc.png" alt="Logotipo original de HC Diagnostic">
       </a>
       <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#verificacion">Resultados</a><a href="#domicilio">Domicilio</a><a href="#contacto">Contacto</a>
@@ -1101,272 +172,143 @@
           </div>
           <div class="proofs"><span>Atención personalizada</span><span>Calidad en cada proceso</span><span>Toma de muestra a domicilio</span></div>
         </div>
-        <div class="brand-stage" aria-label="Identidad visual de HC Diagnostic">
-          <div class="stage-glow"></div><div class="stage-ring"></div>
-          <div class="logo-card"><img src="assets/Científico en laboratorio de diagnóstico.png" alt="HC Diagnostic - Laboratorio clínico" loading="lazy" style="display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;border-radius:50%;"></div>
-          <div class="floating-note">Laboratorio clínico<small>Compromiso con tu salud</small></div>
+  <div class="brand-stage" aria-label="Identidad visual de HC Diagnostic">
+  <div class="stage-glow"></div>
+  <div class="stage-ring"></div>
+
+  <div class="logo-card">
+    <img
+      src="assets/Científico en laboratorio de diagnóstico.png"
+      alt="Analista de HC Diagnostic trabajando con microscopio"
+      style="display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;border-radius:50%;"
+    >
+  </div>
+
+  <div class="floating-note">
+    Laboratorio clínico
+    <small>Compromiso con tu salud</small>
+  </div>
+</div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-visual"><div class="about-symbol" aria-hidden="true">✚</div></div>
+        <div class="about-copy">
+          <div class="eyebrow">Conócenos</div>
+          <h2>Tu confianza es parte de nuestro compromiso.</h2>
+          <p>En HC Diagnostic E.I.R.L. ponemos nuestra atención en cada etapa del proceso de laboratorio, desde la orientación al paciente hasta el manejo responsable de las muestras y la entrega de información clara.</p>
+          <div class="values">
+            <div class="value">Atención cercana<span>Orientación clara y amable.</span></div>
+            <div class="value">Responsabilidad<span>Cuidado en cada etapa del proceso.</span></div>
+            <div class="value">Compromiso<span>Servicio enfocado en el paciente.</span></div>
+            <div class="value">Confianza<span>Información clara y ordenada.</span></div>
+          </div>
         </div>
       </div>
     </section>
-
-    
-<section class="about" id="nosotros">
-  <div class="container">
-
-    <div class="section-head">
-      <div class="eyebrow">Conócenos</div>
-      <h2>HC Diagnostic E.I.R.L.</h2>
-      <p>Comprometidos con la calidad, la confianza y el cuidado de tu salud.</p>
-    </div>
-
-    <div class="about-copy" style="max-width:850px;margin:0 auto 30px;text-align:center">
-      <h2>Nosotros</h2>
-      <p>En HC Diagnostic E.I.R.L. estamos enfocados en brindar servicios de análisis clínicos eficientes y confiables, con una atención humana y profesional.</p>
-      <p>Contamos con profesionales capacitados y comprometidos, cuya experiencia nos permite trabajar con responsabilidad y mantener altos estándares de calidad en nuestros servicios.</p>
-    </div>
-
-    <div class="values" style="grid-template-columns:1fr 1fr;max-width:900px;margin:0 auto">
-      <div class="value">
-        <strong>Misión</strong>
-        <span>Brindar servicios de laboratorio clínico con responsabilidad, precisión y compromiso, ofreciendo una atención amable y resultados que contribuyan al cuidado de la salud de nuestros pacientes.</span>
-      </div>
-      <div class="value">
-        <strong>Visión</strong>
-        <span>Ser un laboratorio clínico reconocido por la confianza, la calidad de atención y el compromiso con la mejora continua, contribuyendo a la prevención y cuidado de la salud de nuestra comunidad.</span>
-      </div> 
-    </div>
-  <div class="principles">
-  <article class="principle">
-    <div class="principle-icon">✧</div>
-    <h3>Precisión</h3>
-    <p>Rigor y responsabilidad en cada proceso analítico.</p>
-  </article>
-
-  <article class="principle">
-    <div class="principle-icon">♡</div>
-    <h3>Confianza</h3>
-    <p>Atención humana y comunicación transparente.</p>
-  </article>
-
-  <article class="principle">
-    <div class="principle-icon">✚</div>
-    <h3>Compromiso</h3>
-    <p>Dedicación y responsabilidad en el cuidado de la salud.</p>
-  </article>
-</div>
-
-    </div>
-
-  </div>
-</section>
-
 
     <section class="services" id="servicios">
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Nuestros servicios</div>
           <h2>Áreas de laboratorio</h2>
-         <p>Ofrecemos análisis clínicos en nuestras diferentes áreas y exámenes especializados mediante convenios con laboratorios externos. Consulta disponibilidad, preparación y tiempos de entrega.</p>
+          <p>Consulta por disponibilidad, preparación y tiempos de entrega de cada examen.</p>
         </div>
-        
-<div class="cards">
-  <article class="service">
-    <div class="service-icon">＋</div>
-    <h3>Hematología</h3>
-    <p>Hemogramas, velocidad de sedimentación globular, lámina periférica y otras evaluaciones hematológicas.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">◈</div>
-    <h3>Bioquímica</h3>
-    <p>Glucosa, perfiles bioquímicos, función renal, función hepática, perfil lipídico y otros análisis.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">◎</div>
-    <h3>Inmunología</h3>
-    <p>Pruebas hormonales, marcadores serológicos y determinaciones inmunológicas.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">⌬</div>
-    <h3>Microbiología</h3>
-    <p>Urocultivos, cultivos microbiológicos, identificación bacteriana y pruebas de sensibilidad antimicrobiana.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">▤</div>
-    <h3>Uroanálisis</h3>
-    <p>Examen completo de orina, evaluación del sedimento urinario y otros estudios relacionados.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">⌂</div>
-    <h3>Toma de muestras</h3>
-    <p>Recolección de muestras en nuestro laboratorio y coordinación de atención a domicilio.</p>
-  </article>
-
-  <article class="service">
-    <div class="service-icon">✧</div>
-    <h3>Exámenes especiales</h3>
-    <p>Amplia variedad de análisis especializados mediante convenios con laboratorios externos asociados.</p>
-  </article>
-</div>
-
+        <div class="cards">
+          <article class="service"><div class="service-icon">＋</div><h3>Hematología</h3><p>Hemograma, velocidad de sedimentación globular y evaluaciones hematológicas.</p></article>
+          <article class="service"><div class="service-icon">◈</div><h3>Bioquímica</h3><p>Perfiles bioquímicos, glucosa, función renal, función hepática y otros análisis.</p></article>
+          <article class="service"><div class="service-icon">◎</div><h3>Inmunología</h3><p>Pruebas hormonales, marcadores y determinaciones inmunológicas.</p></article>
+          <article class="service"><div class="service-icon">⌬</div><h3>Microbiología</h3><p>Estudios microbiológicos y apoyo al diagnóstico mediante análisis de muestras.</p></article>
+          <article class="service"><div class="service-icon">▤</div><h3>Uroanálisis</h3><p>Examen completo de orina y evaluación del sedimento urinario.</p></article>
+          <article class="service"><div class="service-icon">⌂</div><h3>Toma de muestras</h3><p>Coordinación de toma de muestras a domicilio previa consulta de cobertura.</p></article>
+        </div>
       </div>
     </section>
 
-   
-
+    
 <section class="verify" id="verificacion">
   <div class="container verify-grid">
-
     <div class="verify-copy">
       <div class="eyebrow">CONSULTA DE RESULTADOS</div>
       <h2>Verifica tu resultado</h2>
-      <p>Ingresa el código de verificación que aparece en tu comprobante de atención para consultar tu informe de laboratorio.</p>
+      <p>
+        Ingresa el código de 12 dígitos que aparece en tu informe
+        para solicitar tu resultado a nuestro equipo.
+      </p>
       <p style="font-size:13px;color:var(--muted)">
-        La consulta en línea está en proceso de implementación. Mientras tanto, puedes solicitar tu informe directamente a nuestro equipo.
+        Nuestro personal verificará tu código y te enviará el informe
+        por WhatsApp.
       </p>
     </div>
 
     <div class="verify-card">
       <h3>Consulta de informe</h3>
-      <form onsubmit="event.preventDefault();document.getElementById('avisoResultado').style.display='block';">
+
+      <form onsubmit="
+        event.preventDefault();
+        const codigo = document.getElementById('codigoResultado').value;
+        if (!/^[0-9]{12}$/.test(codigo)) {
+          alert('Ingresa un código válido de 12 dígitos.');
+          return;
+        }
+        const mensaje = encodeURIComponent(
+          'Hola, HC Diagnostic. Deseo solicitar mi informe de laboratorio. Mi código de verificación es: ' + codigo
+        );
+        window.open('https://wa.me/51975250738?text=' + mensaje, '_blank');
+      ">
         <label for="codigoResultado">Código de verificación</label>
-        <input id="codigoResultado" type="text" placeholder="Ej. HCD-2026-0001" required>
-        <button class="button" type="submit">Consultar resultado</button>
+
+        <input
+          id="codigoResultado"
+          type="text"
+          inputmode="numeric"
+          maxlength="12"
+          minlength="12"
+          pattern="[0-9]{12}"
+          placeholder="Ej. 202611140001"
+          autocomplete="off"
+          oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,12)"
+          required
+        >
+
+        <button class="button" type="submit">
+          Solicitar resultado por WhatsApp
+        </button>
       </form>
 
-      <div id="avisoResultado" class="result" role="status" style="display:none">
-        La verificación automática todavía no está habilitada. Comunícate con HC Diagnostic para solicitar tu informe.
-      </div>
-
-      <div style="border-top:1px solid var(--line);margin-top:22px;padding-top:18px">
-        <p style="font-size:13px;color:var(--muted)">También puedes solicitar tu informe por:</p>
-
-        <a class="button" style="width:100%;margin-top:10px"
-          href="https://wa.me/51975250738?text=Hola%2C%20deseo%20solicitar%20mi%20resultado%20de%20laboratorio."
-          target="_blank" rel="noopener">
-          WhatsApp ↗
-        </a>
-
-        <a class="button light" style="width:100%;margin-top:12px"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=hcdiagnostic2%40gmail.com&su=Solicitud%20de%20resultado%20de%20laboratorio"
-          target="_blank" rel="noopener">
-          Solicitar por correo ↗
-        </a>
-      </div>
-
       <p class="notice">
-        Tu información clínica es confidencial. No compartas códigos ni datos personales en equipos públicos.
+        Tu información clínica es confidencial. Nuestro equipo
+        verificará el código antes de enviarte el informe.
       </p>
     </div>
   </div>
 </section>
 
 
-
-   
-
-
-<section class="home" id="domicilio">
-  <div class="container home-grid">
-    <div class="home-panel">
-      <div class="home-title">
-        <div class="eyebrow">Atención coordinada</div>
-        <h2>Toma de muestra a domicilio</h2>
+    <section class="home" id="domicilio">
+      <div class="container home-grid">
+        <div>
+          <div class="eyebrow">Atención coordinada</div>
+          <h2>Toma de muestra a domicilio</h2>
+          <p>Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.</p>
+        </div>
+        <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">Coordinar por WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
-
-      <p class="home-description">
-        Coordina con nuestro equipo la disponibilidad del servicio, la ubicación y la preparación necesaria para tu análisis.
-      </p>
-    </div>
-
-    <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20coordinar%20una%20toma%20de%20muestra%20a%20domicilio." target="_blank" rel="noopener">
-      Coordinar por WhatsApp ↗
-    </a>
-  </div>
-</section>
-
-
-
-
-
-   
-
-<section class="appointment" id="citas">
-  <div class="container appointment-grid">
-    <div class="appointment-copy">
-      <div class="eyebrow">Agenda tu atención</div>
-      <h2>Solicita una cita o toma de muestra</h2>
-      <p>Completa estos datos y se abrirá WhatsApp con tu solicitud lista para enviar. Nuestro equipo confirmará la disponibilidad, preparación y horario.</p>
-      <div class="appointment-note">La solicitud no confirma una cita automáticamente. La atención queda coordinada cuando nuestro equipo te responda.</div>
-    </div>
-
-    <form class="appointment-card" id="appointmentForm">
-      <div class="appointment-fields">
-        <label>Nombre completo
-          <input name="nombre" type="text" placeholder="Escribe tu nombre" required>
-        </label>
-        <label>Celular de contacto
-          <input name="celular" type="tel" placeholder="Tu número de celular" required>
-        </label>
-        <label class="field-wide">Análisis que necesitas
-          <select name="analisis" required>
-            <option value="">Selecciona una opción</option>
-            <option>Hematología</option>
-            <option>Bioquímica</option>
-            <option>Inmunología / pruebas hormonales</option>
-            <option>Microbiología / cultivos</option>
-            <option>Examen completo de orina</option>
-            <option>Exámenes especiales</option>
-            <option>Otro / necesito orientación</option>
-          </select>
-        </label>
-        <label>Tipo de atención
-          <select name="atencion" required>
-            <option value="">Selecciona</option>
-            <option>En el laboratorio</option>
-            <option>Toma de muestra a domicilio</option>
-          </select>
-        </label>
-        <label>Fecha de preferencia
-          <input name="fecha" type="date">
-        </label>
-        <label class="field-wide">Distrito o zona (si es a domicilio)
-          <input name="zona" type="text" placeholder="Indica tu distrito o zona">
-        </label>
-      </div>
-      <button class="button appointment-submit" type="submit">Enviar solicitud por WhatsApp ↗</button>
-      <p class="appointment-privacy">No incluyas diagnósticos ni información clínica privada en este formulario.</p>
-    </form>
-  </div>
-</section>
+    </section>
 
     <section class="contact" id="contacto">
-  <div class="container">
-    <div class="eyebrow">Estamos para ayudarte</div>
-    <h2>Comunícate con HC Diagnostic</h2>
-    <p>Estamos disponibles para atender tus consultas y coordinar tus servicios de laboratorio.</p>
-
-    <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20HC%20Diagnostic." target="_blank" rel="noopener">
-      Escribir por WhatsApp ↗
-    </a>
-
-    <div class="contact-details">
-      <span class="contact-chip">Teléfono: 975 250 738</span>
-      <span class="contact-chip">Correo: hcdiagnostic2@gmail.com</span>
-      <span class="contact-chip">Ubicación: Chiclayo, Lambayeque, Perú</span>
-      <span class="contact-chip">Atención: coordinación todos los días</span>
-    </div>
-
-    <p style="margin-top:18px">
-      Programamos análisis con anticipación y coordinamos tomas de muestras a domicilio, incluso fuera del horario habitual, previa coordinación.
-    </p>
-  </div>
-</section>
-
+      <div class="container">
+        <div class="eyebrow">Estamos para ayudarte</div>
+        <h2>Comunícate con HC Diagnostic</h2>
+        <p>Consultas, información y coordinación de servicios.</p>
+        <a class="button" href="https://wa.me/51975250738" target="_blank" rel="noopener">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+        <div class="contact-details">
+          <span class="contact-chip">Teléfono: 975 250 738</span>
+          <span class="contact-chip">Correo: hcdiagnostic2@gmail.com</span>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -1393,72 +335,6 @@
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.textContent = "☰";
     }));
-   
- 
-// Activar animaciones al desplazarse por la página
-const revealTargets = document.querySelectorAll(
-  ".section-head, .about-copy, .values, .cards .service, .verify-copy, .verify-card, #domicilio .home-panel, #domicilio .home-grid > .button, .contact .container > *"
-);
-
-revealTargets.forEach(element => {
-  element.classList.add("reveal-item");
-});
-
-if (
-  "IntersectionObserver" in window &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-) {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealTargets.forEach(element => {
-    revealObserver.observe(element);
-  });
-} else {
-  revealTargets.forEach(element => {
-    element.classList.add("is-visible");
-  });
-}
-    
-const appointmentForm = document.getElementById("appointmentForm");
-
-appointmentForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const data = new FormData(appointmentForm);
-
-  const mensaje = [
-    "Hola, HC Diagnostic. Deseo solicitar una cita o toma de muestra.",
-    "Nombre: " + data.get("nombre"),
-    "Celular: " + data.get("celular"),
-    "Análisis: " + data.get("analisis"),
-    "Atención: " + data.get("atencion"),
-    "Fecha preferida: " + (data.get("fecha") || "Por coordinar"),
-    "Distrito o zona: " + (data.get("zona") || "No indicado")
-  ].join("\n");
-
-  const enlace = "https://wa.me/51975250738?text=" + encodeURIComponent(mensaje);
-
-  window.open(enlace, "_blank");
-
-let aviso = document.getElementById("confirmacionCita");
-
-if (!aviso) {
-  aviso = document.createElement("p");
-  aviso.id = "confirmacionCita";
-  aviso.style.cssText = "margin-top:15px;padding:14px;background:#e8f7f8;color:#075c91;border-radius:12px;text-align:center;font-size:13px;line-height:1.6;";
-  appointmentForm.appendChild(aviso);
-}
-
-aviso.textContent = "Tu solicitud está lista. En WhatsApp, pulsa Enviar para que HC Diagnostic pueda coordinar tu atención.";
-});
-
- </script>
+  </script>
 </body>
 </html>
