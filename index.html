@@ -180,6 +180,15 @@
   background:#dff6f7;
 }
 
+        .coverage{background:var(--pale)}
+    .coverage-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+    .coverage-copy h2{font-size:clamp(29px,3.2vw,41px);line-height:1.16;letter-spacing:-.04em;color:var(--navy);margin:12px 0}
+    .coverage-copy p{color:var(--muted);font-size:15px;max-width:570px}
+    .coverage-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .coverage-place{display:flex;align-items:center;gap:10px;padding:13px 15px;background:#fff;border:1px solid var(--line);border-radius:14px;color:var(--navy);font-size:13px;font-weight:750}
+    .coverage-place:before{content:"✓";display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:#e6f7f7;color:#078b94;font-weight:900}
+    .coverage-note{font-size:12px!important;color:var(--muted)!important;margin-top:14px}
+    .coverage-actions{margin-top:22px}
     .contact{text-align:center}
     .contact h2{font-size:clamp(29px,3vw,39px);color:var(--navy);margin:12px 0}
     .contact p{color:var(--muted);margin:0 0 24px}
@@ -194,6 +203,7 @@
     @media(max-width:900px){
       .navlinks{gap:16px}.hero-grid{gap:28px}.brand-stage{min-height:330px}.stage-ring{width:320px;height:320px}.stage-glow{width:280px;height:280px}
       .about-grid{gap:34px}.verify-grid{gap:32px}
+    .coverage-grid{grid-template-columns:1fr;gap:24px}
     }
     @media(max-width:720px){
       .nav{height:76px}.brand img{width:145px;height:68px}.navlinks{display:none;position:absolute;left:0;right:0;top:76px;background:#fff;padding:18px 24px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}
@@ -224,7 +234,7 @@
         <img src="assets/logo-hc.png" alt="Logotipo original de HC Diagnostic">
       </a>
       <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#verificacion">Resultados</a><a href="#domicilio">Domicilio</a><a href="#contacto">Contacto</a>
+       <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#verificacion">Resultados</a><a href="#domicilio">Domicilio</a><a href="#cobertura">Cobertura</a><a href="#contacto">Contacto</a>
       </nav>
       <a class="button" href="https://wa.me/51975250738" target="_blank" rel="noopener">Contáctanos <span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -430,6 +440,29 @@
 </section>
 
 
+        <section class="coverage" id="cobertura">
+      <div class="container coverage-grid">
+        <div class="coverage-copy">
+          <div class="eyebrow">Atención en tu zona</div>
+          <h2>Llegamos hasta tu domicilio</h2>
+          <p>HC Diagnostic coordina la toma de muestras a domicilio en Chiclayo y distritos aledaños. Consulta la disponibilidad para tu ubicación y recibe orientación sobre la preparación de tus análisis.</p>
+          <p class="coverage-note">La atención se coordina previamente según la ubicación, el horario y la disponibilidad del servicio.</p>
+          <div class="coverage-actions">
+            <a class="button" href="https://wa.me/51975250738?text=Hola%2C%20deseo%20consultar%20la%20disponibilidad%20de%20toma%20de%20muestras%20a%20domicilio.%20Mi%20distrito%20es%3A%20" target="_blank" rel="noopener">Consultar cobertura por WhatsApp ↗</a>
+          </div>
+        </div>
+        <div class="coverage-list" aria-label="Zonas de atención coordinada">
+          <div class="coverage-place">Chiclayo</div>
+          <div class="coverage-place">José Leonardo Ortiz</div>
+          <div class="coverage-place">La Victoria</div>
+          <div class="coverage-place">Pimentel</div>
+          <div class="coverage-place">Pomalca</div>
+          <div class="coverage-place">Reque</div>
+          <div class="coverage-place">Monsefú</div>
+          <div class="coverage-place">Lambayeque</div>
+        </div>
+      </div>
+    </section>
     <section class="contact" id="contacto">
       <div class="container">
         <div class="eyebrow">Estamos para ayudarte</div>
