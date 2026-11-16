@@ -482,6 +482,43 @@
         behavior: "smooth"
       });
     });
+    
+    // MOVIMIENTO AUTOMATICO DEL CARRUSEL
+    const galleryArea = document.querySelector(".home-gallery-wrap");
+    let galleryTimer = null;
+
+    function startGallery() {
+      if (galleryTimer || homeGallery.scrollWidth <= homeGallery.clientWidth + 5) return;
+
+      galleryTimer = window.setInterval(() => {
+        const atEnd = homeGallery.scrollLeft + homeGallery.clientWidth >= homeGallery.scrollWidth - 5;
+
+        homeGallery.scrollTo({
+          left: atEnd ? 0 : homeGallery.scrollLeft + homeGallery.clientWidth,
+          behavior: "smooth"
+        });
+      }, 4000);
+    }
+
+    function stopGallery() {
+      window.clearInterval(galleryTimer);
+      galleryTimer = null;
+    }
+
+    galleryArea.addEventListener("pointerenter", stopGallery);
+    galleryArea.addEventListener("pointerleave", startGallery);
+    galleryArea.addEventListener("focusin", stopGallery);
+    galleryArea.addEventListener("focusout", startGallery);
+    galleryArea.addEventListener("touchstart", stopGallery);
+    galleryArea.addEventListener("touchend", startGallery);
+
+    window.addEventListener("resize", () => {
+      stopGallery();
+      startGallery();
+    });
+
+    startGallery();
+
 
   </script>
 </body>
