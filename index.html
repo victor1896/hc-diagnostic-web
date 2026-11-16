@@ -114,6 +114,70 @@
     .home p{max-width:650px;color:#d7eaf3;margin:0}
     .home .eyebrow{color:#8be4e5}
     .home .button{background:#fff;border-color:#fff;color:var(--navy);white-space:nowrap;box-shadow:none}
+    
+/* CARRUSEL DOMICILIO HC DIAGNOSTIC */
+.home-gallery-wrap{
+  margin-top:38px;
+}
+
+.home-gallery{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 36px)/3);
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:5px 3px 16px;
+  scrollbar-width:thin;
+}
+
+.home-slide{
+  min-width:0;
+  scroll-snap-align:start;
+  margin:0;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.home-slide img{
+  display:block;
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.home-slide figcaption{
+  padding:14px;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+}
+
+.home-gallery-controls{
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+  margin-top:12px;
+}
+
+.home-gallery-controls button{
+  width:42px;
+  height:42px;
+  border:1px solid #fff;
+  border-radius:50%;
+  background:#fff;
+  color:var(--navy);
+  font-size:24px;
+  cursor:pointer;
+}
+.home-gallery-controls button:hover{
+  background:#dff6f7;
+}
+
     .contact{text-align:center}
     .contact h2{font-size:clamp(29px,3vw,39px);color:var(--navy);margin:12px 0}
     .contact p{color:var(--muted);margin:0 0 24px}
@@ -136,6 +200,10 @@
       .hero-grid{gap:18px}.brand-stage{min-height:300px}.logo-card{max-width:370px;min-height:235px}.floating-note{right:0;bottom:2px}
       section{padding:62px 0}.cards{grid-template-columns:repeat(2,1fr)}.about-visual{min-height:230px}
       .home-grid{align-items:flex-start;flex-direction:column}.home .button{white-space:normal}
+      
+.home-gallery{grid-auto-columns:85%}
+.home-slide img{height:220px}
+
     }
     @media(max-width:500px){
       .container{width:calc(100% - 30px)}.nav>.button{display:none}.brand img{width:152px}
@@ -398,6 +466,23 @@
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.textContent = "☰";
     }));
+    
+    const homeGallery = document.getElementById("homeGallery");
+
+    document.getElementById("homeGalleryPrev").addEventListener("click", () => {
+      homeGallery.scrollBy({
+        left: -homeGallery.clientWidth,
+        behavior: "smooth"
+      });
+    });
+
+    document.getElementById("homeGalleryNext").addEventListener("click", () => {
+      homeGallery.scrollBy({
+        left: homeGallery.clientWidth,
+        behavior: "smooth"
+      });
+    });
+
   </script>
 </body>
 </html>
