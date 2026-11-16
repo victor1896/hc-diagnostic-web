@@ -79,13 +79,15 @@
     .section-head p{margin:0;color:var(--muted);font-size:15px}
     .services{background:var(--pale)}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;transition:transform .22s,box-shadow .22s,border-color .22s}
-    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#c4dce9}
+   .service{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;transition:transform .22s,box-shadow .22s,border-color .22s}
+.service-photo{display:block;width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:14px}
+   .service:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(8,118,185,.18);border-color:#0876b9;background:#eaf6fd}
     .service-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#e6f5fb,#e8fbfa);display:grid;place-items:center;color:var(--blue);font-size:21px;font-weight:800}
     .service h3{font-size:18px;color:var(--navy);margin:17px 0 7px}
     .service p{font-size:13px;color:var(--muted);margin:0;line-height:1.65}
     .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-    .about-visual{min-height:330px;border-radius:28px;background:linear-gradient(145deg,#07345d,#0876b9 68%,#20b8c7);position:relative;overflow:hidden;display:grid;place-items:center;padding:34px}
+    .about-visual{width:440px;height:290px;min-height:0;border-radius:28px;background:linear-gradient(145deg,#07345d,#0876b9 68%,#20b8c7);position:relative;overflow:hidden;display:grid;place-items:center;padding:22px}
+.about-visual img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px;position:relative;z-index:1}
     .about-visual:before,.about-visual:after{content:"";position:absolute;border:1px solid #ffffff35;border-radius:50%;width:310px;height:310px;right:-95px;top:-115px}
     .about-visual:after{width:220px;height:220px;right:-48px;top:-68px}
     .about-symbol{position:relative;z-index:1;width:108px;height:108px;border-radius:30px;background:#ffffff1d;border:1px solid #ffffff38;display:grid;place-items:center;color:white;font-size:50px}
@@ -193,7 +195,9 @@
 
     <section class="about" id="nosotros">
       <div class="container about-grid">
-        <div class="about-visual"><div class="about-symbol" aria-hidden="true">✚</div></div>
+       <div class="about-visual">
+  <img src="assets/laboratorio-nosotros.png" alt="Personal trabajando en un laboratorio clínico">
+</div>
         <div class="about-copy">
           <div class="eyebrow">Conócenos</div>
           <h2>Tu confianza es parte de nuestro compromiso.</h2>
@@ -216,13 +220,42 @@
           <p>Consulta por disponibilidad, preparación y tiempos de entrega de cada examen.</p>
         </div>
         <div class="cards">
-          <article class="service"><div class="service-icon">＋</div><h3>Hematología</h3><p>Hemograma, velocidad de sedimentación globular y evaluaciones hematológicas.</p></article>
-          <article class="service"><div class="service-icon">◈</div><h3>Bioquímica</h3><p>Perfiles bioquímicos, glucosa, función renal, función hepática y otros análisis.</p></article>
-          <article class="service"><div class="service-icon">◎</div><h3>Inmunología</h3><p>Pruebas hormonales, marcadores y determinaciones inmunológicas.</p></article>
-          <article class="service"><div class="service-icon">⌬</div><h3>Microbiología</h3><p>Estudios microbiológicos y apoyo al diagnóstico mediante análisis de muestras.</p></article>
-          <article class="service"><div class="service-icon">▤</div><h3>Uroanálisis</h3><p>Examen completo de orina y evaluación del sedimento urinario.</p></article>
-          <article class="service"><div class="service-icon">⌂</div><h3>Toma de muestras</h3><p>Coordinación de toma de muestras a domicilio previa consulta de cobertura.</p></article>
-        </div>
+  <article class="service">
+    <img class="service-photo" src="assets/hematologia.jpg" alt="Área de hematología">
+    <h3>Hematología</h3>
+    <p>Hemograma, velocidad de sedimentación globular y evaluaciones hematológicas.</p>
+  </article>
+
+  <article class="service">
+    <img class="service-photo" src="assets/bioquimica.jpg" alt="Área de bioquímica">
+    <h3>Bioquímica</h3>
+    <p>Perfiles bioquímicos, glucosa, función renal, función hepática y otros análisis.</p>
+  </article>
+
+  <article class="service">
+    <img class="service-photo" src="assets/inmunologia.jpg" alt="Área de inmunología">
+    <h3>Inmunología</h3>
+    <p>Pruebas hormonales, marcadores y determinaciones inmunológicas.</p>
+  </article>
+
+  <article class="service">
+    <img class="service-photo" src="assets/microbiologia.jpg" alt="Área de microbiología">
+    <h3>Microbiología</h3>
+    <p>Estudios microbiológicos y apoyo al diagnóstico mediante análisis de muestras.</p>
+  </article>
+
+  <article class="service">
+    <img class="service-photo" src="assets/uroanalisis.jpg" alt="Área de uroanálisis">
+    <h3>Uroanálisis</h3>
+    <p>Examen completo de orina y evaluación del sedimento urinario.</p>
+  </article>
+
+  <article class="service">
+    <img class="service-photo" src="assets/toma-muestras.jpg" alt="Toma de muestras">
+    <h3>Toma de muestras</h3>
+    <p>Coordinación de toma de muestras a domicilio previa consulta de cobertura.</p>
+  </article>
+</div>
       </div>
     </section>
 
