@@ -276,7 +276,52 @@
   text-align:center;
   margin-top:24px;
 }
+/* MEJORA VISUAL DEL CATALOGO HC DIAGNOSTIC */
+.catalog-grid{
+  align-items:stretch;
+  gap:22px;
+}
 
+.catalog-card{
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:28px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#ffffff,#f7fbff);
+  box-shadow:0 10px 28px rgba(7,52,93,.07);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+
+.catalog-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 34px rgba(7,52,93,.13);
+  border-color:#20b8c7;
+}
+
+.catalog-card h3{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.catalog-card p{
+  line-height:1.9;
+  font-size:13.5px;
+}
+
+@media(max-width:650px){
+  .catalog-grid{
+    grid-template-columns:1fr;
+  }
+  .catalog-card{
+    min-height:auto;
+  }
+}
 @media(max-width:900px){
   .catalog-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
