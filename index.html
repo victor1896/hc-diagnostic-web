@@ -224,7 +224,71 @@
       .verify-card{padding:23px}.logo-card{padding:22px;min-height:205px}.brand-stage{min-height:265px}
       .footer-row{align-items:flex-start;flex-direction:column}
     }
-  </style>
+ 
+/* CATÁLOGO DE ANÁLISIS HC DIAGNOSTIC */
+.catalog{
+  background:linear-gradient(180deg,#f2f8fc,#ffffff);
+}
+
+.catalog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+
+.catalog-card{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 8px 24px rgba(7,52,93,.06);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+
+.catalog-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 30px rgba(7,52,93,.12);
+  border-color:var(--cyan);
+}
+
+.catalog-card h3{
+  color:var(--navy);
+  font-size:18px;
+  margin:0 0 12px;
+}
+
+.catalog-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  margin:0;
+}
+
+.catalog-note{
+  margin:26px auto 0;
+  max-width:760px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.catalog-action{
+  text-align:center;
+  margin-top:24px;
+}
+
+@media(max-width:900px){
+  .catalog-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:500px){
+  .catalog-grid{
+    grid-template-columns:1fr;
+  }
+}
+ </style>
 </head>
 <body>
   <div class="topline"></div>
@@ -556,5 +620,62 @@
 
 
   </script>
+
+  
+<section class="catalog" id="analisis">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Catálogo de análisis</div>
+      <h2>Conoce nuestras áreas de laboratorio</h2>
+      <p>Consulta por los análisis que necesitas y coordina la atención con nuestro equipo.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <article class="catalog-card">
+        <h3>Hematología</h3>
+        <p>Hemograma completo · VSG · Evaluaciones hematológicas.</p>
+      </article>
+
+      <article class="catalog-card">
+        <h3>Bioquímica</h3>
+        <p>Glucosa · Urea · Creatinina · Perfil hepático · Perfil lipídico · Calcio y electrolitos.</p>
+      </article>
+
+      <article class="catalog-card">
+        <h3>Inmunología y hormonas</h3>
+        <p>Vitamina D 25-OH · Péptido C · Pruebas hormonales · Marcadores y anticuerpos.</p>
+      </article>
+
+      <article class="catalog-card">
+        <h3>Microbiología</h3>
+        <p>Urocultivo · Cultivo de hongos · Estudios microbiológicos.</p>
+      </article>
+
+      <article class="catalog-card">
+        <h3>Uroanálisis</h3>
+        <p>Examen completo de orina · Sedimento urinario · Cristales y elementos formes.</p>
+      </article>
+
+      <article class="catalog-card">
+        <h3>Pruebas especiales</h3>
+        <p>Dengue NS1, IgM e IgG · VDRL · Helicobacter pylori en heces · Calprotectina fecal · Anti-transglutaminasa IgA.</p>
+      </article>
+    </div>
+
+    <p class="catalog-note">
+      La disponibilidad y preparación de cada análisis se confirma previamente.
+      Algunos estudios pueden requerir coordinación con un laboratorio de referencia.
+    </p>
+
+    <div class="catalog-action">
+      <a class="button"
+         href="https://wa.me/51975250738?text=Hola%2C%20deseo%20consultar%20por%20un%20an%C3%A1lisis%20cl%C3%ADnico."
+         target="_blank" rel="noopener">
+        Consultar por un análisis ↗
+      </a>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
